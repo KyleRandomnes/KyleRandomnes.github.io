@@ -9,9 +9,9 @@ Welcome to my portfolio! Here’s a bit about me:
 📫 How to reach me:
 
 - [LinkedIn: Kyle Le Grange](https://www.linkedin.com/in/kyle-le-grange-886820293)
-- [Join my coding Discord server](https://discord.gg/Kzfz4Y8QKh)
 - [GitHub: KyleRandomnes](https://github.com/KyleRandomnes)
-- Email: kylerandomnes@gmail.com
+- [Join my coding Discord server](https://discord.gg/Kzfz4Y8QKh)
+- [Email Me](mailto:kylerandomnes@gmail.com)
 - Pronouns: He/Him
 - Fun fact: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.....
   I'd argue it wasn't edible when first made but for those who like honey, you don't need to check the expiry  date anymore.
