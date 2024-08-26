@@ -126,6 +126,20 @@ input[type="checkbox"]:checked::before {
     background-color: navy;
     border-color: blue;
 }
+/* Active state for uni-button */
+.uni-button:active {
+    background-color: darkblue;
+    color: white;
+}
+.uni-button:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+.uni-button:focus {
+    outline: 2px solid yellow;
+}
+
 
 .own-button {
     background-color: darkred;
@@ -136,7 +150,6 @@ input[type="checkbox"]:checked::before {
     background-color: darkorange;
     border-color: orange;
 }
-
 
 /* this is for span's and others */
     .blue {
