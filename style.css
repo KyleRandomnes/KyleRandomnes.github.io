@@ -112,6 +112,41 @@ input[type="checkbox"]:checked::before {
     color: black;
 }
 
+/* Div for projects.html?*/
+/* Container for the buttons */
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly between buttons */
+    align-items: center;
+    margin: 20px auto; /* Center the container */
+    width: 80%; /* Adjust the width as needed */
+}
+
+/* Styling for the buttons */
+.button {
+    padding: 10px 20px;
+    font-family: 'Dot-Matrix', sans-serif;
+    background-color: black;
+    color: green;
+    border: 2px solid #008000;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    flex-grow: 1; /* Make buttons expand equally */
+    margin: 0 10px; /* Add spacing between buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: green;
+    color: black;
+}
+
+.button:active {
+    background-color: darkgreen;
+    color: black;
+}
+
 /* this is for span's and others */
     .blue {
         color: blue;
