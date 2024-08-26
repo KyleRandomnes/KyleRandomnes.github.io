@@ -111,46 +111,50 @@ input[type="checkbox"]:checked::before {
     background-color: darkgreen;
     color: black;
 }
-
-/* Div for projects.html?*/
 /* Container for the buttons */
-.button-container {
+.spin-wheel {
     display: flex;
-    justify-content: space-around; /* Distribute space evenly between buttons */
+    justify-content: space-around;
     align-items: center;
-    margin: 20px auto; /* Center the container */
-    width: 80%; /* Adjust the width as needed */
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    perspective: 1000px; /* Adds depth for 3D effect */
 }
-/* Specific styles for different buttons */
+
+/* Shared button styles */
+.button {
+    width: 30%; /* Each button takes about 1/3 of the container width */
+    padding: 20px;
+    font-family: 'Dot-Matrix', sans-serif;
+    background-color: black;
+    color: green;
+    border: 2px solid #008000;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transform-origin: center center;
+    transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Specific styles for buttons */
 .uni-button {
-    background-color: navy;
-    border-color: blue;
+    transform: rotateY(25deg); /* Tilts the button away */
 }
-/* Active state for uni-button */
-.uni-button:active {
-    background-color: darkblue;
-    color: white;
-}
-.uni-button:hover {
-    background-color: lightblue;
-    color: black;
-}
-
-.uni-button:focus {
-    outline: 2px solid yellow;
-}
-
 
 .own-button {
-    background-color: darkred;
-    border-color: red;
+    transform: scale(1.1); /* Slightly larger for emphasis */
 }
 
 .study-button {
-    background-color: darkorange;
-    border-color: orange;
+    transform: rotateY(-25deg); /* Tilts the button away in the opposite direction */
 }
 
+/* Hover effects */
+.button:hover {
+    transform: rotateY(0deg) scale(1.2); /* Straightens and grows the button */
+    background-color: green;
+    color: black;
+}
 /* this is for span's and others */
     .blue {
         color: blue;
