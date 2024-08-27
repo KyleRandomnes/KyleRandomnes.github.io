@@ -94,7 +94,7 @@
 
 .social-links a {
     display: block; /* Makes the anchor tags block-level elements */
-    width: 100%; /* Makes each link take the full width of the container */
+    width: 200%; /* Makes each link take the full width of the container */
     text-align: center; /* Centers text inside each link */
     padding: 0; /* Reset padding to ensure button styles control padding */
     box-sizing: border-box; /* Ensures padding and border are included in the width */
