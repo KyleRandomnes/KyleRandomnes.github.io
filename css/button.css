@@ -58,6 +58,7 @@
 
 /* Own button adjustment */
 .own-button {
+    padding: 0;
     transform: scale(1.1); /* Slightly larger for emphasis */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
@@ -72,6 +73,7 @@
 
 /* Study button adjustment */
 .study-button {
+    padding: 0;
     transform: rotateY(+40deg); /* Tilts the button away in the opposite direction */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
