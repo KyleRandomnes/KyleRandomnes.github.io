@@ -70,12 +70,12 @@
 }
 
 /* Target .own-button when .uni-button is hovered */
-.own-button:hover ~ .own-button {
+.own-button:hover ~ .study-button {
     transform: scale(0.7); /* Make own-button smaller */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
-.own-button:hover ~ .study-button {
-    transform: scale(0.5); /* Make own-button smaller */
+.own-button:hover ~ .uni-button {
+    transform: scale(0.7); /* Make own-button smaller */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
 
@@ -93,10 +93,12 @@
     transform: scale(0.7); /* Make own-button smaller */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
-.study-button:hover ~ .study-button {
+.study-button:hover ~ .uni-button {
     transform: scale(0.5); /* Make own-button smaller */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
+
+
 
 /* How to decide how link tree should look */
 .social-links {
