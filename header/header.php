@@ -5,4 +5,6 @@
     <title>KyleRandomnes Portfolio</title>
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/links.css">
 </head>
