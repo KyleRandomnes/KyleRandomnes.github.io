@@ -20,14 +20,27 @@
 }
 
 .project {
-    display: inline-block;
     padding: 10px 20px;
     font-family: 'Dot-Matrix', sans-serif;
     background-color: black;
     color: green;
     border: 2px solid #008000;
     width:90%;
+    display: flex; /* Enables horizontal alignment */
+    align-items: flex-start; /* Aligns both children at the top */
     transition: background-color 0.3s ease, color 0.3s ease;
     height: auto; /* Maintains aspect ratio */
-    margin-left: 5%
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.project-text{
+    width: 80%;
+    margin-left: 0;
+}
+
+.project-img {
+    width: 20%;
+    margin-right: 0;
+    padding-left: 10px;
 }
