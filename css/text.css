@@ -26,8 +26,8 @@
     background-color: black;
     color: green;
     border: 2px solid #008000;
-    width:80%;
+    width:90%;
     transition: background-color 0.3s ease, color 0.3s ease;
     height: auto; /* Maintains aspect ratio */
-    margin-left: 10%
+    margin-left: 5%
 }
