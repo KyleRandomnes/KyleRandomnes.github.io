@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <?php include 'includes/header.php'; ?>
+    <head>
+        <!-- JavaScript will load the header content here -->
+    </head>
     <body>
         <h1>View my Projects</h1>
 
         <!-- Links to other sites -->
         <p>Navigate my website</p>
         <p><a href="index.html">Return Home</a></p>
+    
+        <script>
+            fetch('header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('head').innerHTML += data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        </script>
     
     </body>
 </html>
