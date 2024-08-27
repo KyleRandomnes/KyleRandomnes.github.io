@@ -1,7 +1,7 @@
 /* imports */
 @font-face {
   font-family: 'Dot-Matrix';
-  src: url("style/DOTMBold.TTF") format('truetype');
+  src: url("../style/DOTMBold.TTF") format('truetype');
 }
 
 /* this is for body specific design */
