@@ -1,33 +1,35 @@
 <html>
-    <head>
+
+<head>
     <!-- JavaScript will load the header content here -->
-    </head>
+</head>
 
-    <body>
-        <h1>KyleRandomnes Links</h1>
+<body>
+    <h1>KyleRandomnes Links</h1>
 
-        <!--Add links as new things come in-->
-        <p>My Links:</p>
-        
-        <div class="social-links">
-            <p><a href="https://www.linkedin.com/in/kyle-le-grange-886820293" class="button social-link">My LinkedIn</a></p>
-            <p><a href="https://github.com/KyleRandomnes" class="button social-link">My Github</a></p>
-            <p><a href="mailto:kylerandomnes@gmail.com" class="button social-link">My Email</a></p>
-            <p><a href="https://discord.gg/Kzfz4Y8QKh" class="button social-link">My Discord Server</a></p>
-        </div>
+    <!--Add links as new things come in-->
+    <p>My Links:</p>
 
-        <p></p>
-        <p>Navigate my website</p>
-        <p><a href="index.html">Return Home</a></p>
+    <div class="social-links">
+        <p><a href="https://www.linkedin.com/in/kyle-le-grange-886820293" class="button social-link">My LinkedIn</a></p>
+        <p><a href="https://github.com/KyleRandomnes" class="button social-link">My Github</a></p>
+        <p><a href="mailto:kylerandomnes@gmail.com" class="button social-link">My Email</a></p>
+        <p><a href="https://discord.gg/Kzfz4Y8QKh" class="button social-link">My Discord Server</a></p>
+    </div>
 
-        <script>
-            fetch('header/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('head').innerHTML += data;
-                })
-                .catch(error => console.error('Error loading header:', error));
-        </script>
-    
-    </body>
+    <p></p>
+    <p>Navigate my website</p>
+    <p><a href="index.html">Return Home</a></p>
+
+    <script>
+        fetch('header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
+</body>
+
 </html>

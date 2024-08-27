@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- JavaScript will load the header content here -->
-    </head>
-    <body>
-        <h1>This is what I made with my University</h1>
-        <div class="project">
-            <div class="project-text">
-                <p>
-                    I am currently studying BSc Computer Science at AUT, I am expected to finish
-                    in 2024 and the end of the second semester. The projects below are some of the
-                    few I completed and am quite pleased with.
-                </p>
-            </div>
-            <div class="project-img">
-                <p><img src="images/AUT-Logo-1.jpg" alt="Self Study Projects" /></p>
-            </div>
-        </div>
 
-        <!-- Links to other sites -->
-        <p>Navigate my website</p>
-        <p><a href="index.html">Return Home</a></p>
-    
-        <script>
-            fetch('header/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('head').innerHTML += data;
-                })
-                .catch(error => console.error('Error loading header:', error));
-        </script>
-    
-    </body>
+<head>
+    <!-- JavaScript will load the header content here -->
+</head>
+
+<body>
+    <h1>This is what I made with my University</h1>
+    <!-- Copy this to all projects basically -->
+    <div class="project">
+        <div class="project-text">
+            <p>
+                I am currently studying BSc Computer Science at AUT, I am expected to finish
+                in 2024 and the end of the second semester. The projects below are some of the
+                few I completed and am quite pleased with.
+            </p>
+        </div>
+        <div class="project-img">
+            <p><img src="images/AUT-Logo-1.jpg" alt="Self Study Projects" /></p>
+        </div>
+    </div>
+
+    <!-- Links to other sites -->
+    <p>Navigate my website</p>
+    <p><a href="index.html">Return Home</a></p>
+
+    <script>
+        fetch('header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
+</body>
+
 </html>
