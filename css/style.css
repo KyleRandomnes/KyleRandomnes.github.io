@@ -10,8 +10,7 @@ html, body {
 }
 
 /* this is for body specific design */
-body {
-    
+body {    
     background-color: black;
     color: Green;
     font-family: 'Dot-Matrix', sans-serif;
