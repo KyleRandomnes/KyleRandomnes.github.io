@@ -2,19 +2,20 @@
 <html>
     <body>
         <script>
-            // Function to load external HTML into an element
-            function loadHTML(url, elementId) {
+            // Function to load PHP content into an element
+            function loadPHP(url, elementId) {
                 fetch(url)
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById(elementId).innerHTML = data;
                     })
-                    .catch(error => console.error('Error loading HTML:', error));
+                    .catch(error => console.error('Error loading PHP content:', error));
             }
     
-            // Load the header content
-            loadHTML('includes/header.php', 'header');
+            // Load the PHP header content
+            loadPHP('header.php', 'header');
         </script>
+
         <h1>KyleRandomnes</h1>
         <!-- Links to other Social Media -->
         <p> Contact me: </p>
