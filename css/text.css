@@ -28,42 +28,28 @@
     background-color: black;
     color: green;
     border: 2px solid #008000;
-    width:90%;
+    width: 90%;
     transition: background-color 0.3s ease, color 0.3s ease;
     height: auto; /* Maintains aspect ratio */
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0 auto; /* Centers the project div */
 }
 
-.project-text{
-    display: flex; /* Enables horizontal alignment */
-    align-items: flex-start; /* Aligns both children at the top */
+.project-text {
+    flex: 1 1 70%; /* Flex properties: grow, shrink, basis */
     box-sizing: border-box;
-    font-family: 'Dot-Matrix', sans-serif;
+    padding: 10px;
     background-color: black;
     color: green;
     border: 2px solid #008000;
     transition: background-color 0.3s ease, color 0.3s ease;
-    height: auto; /* Maintains aspect ratio */
-
-    width: 1000px !important;
-    margin-left: 0;
-    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
 .project-img {
-    display: flex; /* Enables horizontal alignment */
-    align-items: flex-start; /* Aligns both children at the top */
+    flex: 1 1 30%; /* Flex properties: grow, shrink, basis */
     box-sizing: border-box;
-    font-family: 'Dot-Matrix', sans-serif;
+    padding: 10px;
     background-color: black;
     color: green;
     border: 2px solid #008000;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 0;
-    width: 20%;
-    margin-left: 80%;
-    box-sizing: border-box;
-    padding-left: 10px;
+    margin-left: 10px; /* Adds space between text and image */
 }
