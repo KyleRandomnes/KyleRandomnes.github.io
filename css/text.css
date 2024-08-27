@@ -46,7 +46,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     height: auto; /* Maintains aspect ratio */
 
-    width: 1000px;
+    width: 1000px !important;
     margin-left: 0;
     box-sizing: border-box; /* Ensures padding is included in the width */
 }
