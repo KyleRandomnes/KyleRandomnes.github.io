@@ -1,0 +1,8 @@
+.labels {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    perspective: 1000px; /* Adds depth for 3D effect */
+}
