@@ -35,6 +35,7 @@
 /* Specific styles for buttons */
 .uni-button {
     transform: rotateY(70deg); /* Tilts the button away */
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .own-button {
@@ -46,7 +47,14 @@
 }
 
 .uni-button:hover {
-    transform: rotateY(0deg) scale(1.2); /* Straightens and grows the button */
+    transform: rotateY(0deg) scale(1.0); /* Straightens and grows the button */
     background-color: green;
     color: black;
 }
+
+.uni-button:active {
+    transform: rotateY(0deg) scale(1.0); /* Straightens and grows the button */
+    background-color: darkgreen;
+    color: black;
+}
+
