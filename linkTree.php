@@ -1,7 +1,7 @@
 <html>
+    <?php include 'includes/header.php'; ?>
     <body>
         <h1>KyleRandomnes Links</h1>
-        <link rel="stylesheet" href="style.css">
 
         <!--Add links as new things come in-->
         <p>My Links:</p>
@@ -12,6 +12,6 @@
 
         <p></p>
 
-        <a href="index.html">Home Page</a>
+        <p><a href="index.php">Return Home</a></p>
     </body>
 </html>

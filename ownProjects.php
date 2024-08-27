@@ -6,7 +6,7 @@
 
         <!-- Links to other sites -->
         <p>Navigate my website</p>
-        <p><a href="index.html">Return Home</a></p>
+        <p><a href="index.php">Return Home</a></p>
     
     </body>
 </html>
