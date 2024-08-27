@@ -34,8 +34,28 @@
 
 /* Specific styles for buttons */
 .uni-button {
-    transform: rotateY(-70deg); /* Tilts the button away */
+    transform: rotateY(-40deg); /* Tilts the button away */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+}
+
+.uni-button:hover {
+    transform: rotateY(0deg) scale(1.5); /* Straightens and grows the button */
+    background-color: green;
+    color: black;
+}
+
+.uni-button:active {
+    transform: rotateY(0deg) scale(1.5); /* Straightens and grows the button */
+    background-color: darkgreen;
+    color: black;
+}
+
+/* Target .own-button when .uni-button is hovered */
+.uni-button:hover ~ .own-button {
+    transform: scale(0.7); /* Make own-button smaller */
+}
+.uni-button:hover ~ .study-button {
+    transform: scale(0.5); /* Make own-button smaller */
 }
 
 .own-button {
@@ -43,18 +63,6 @@
 }
 
 .study-button {
-    transform: rotateY(+70deg); /* Tilts the button away in the opposite direction */
-}
-
-.uni-button:hover {
-    transform: rotateY(0deg) scale(1.0); /* Straightens and grows the button */
-    background-color: green;
-    color: black;
-}
-
-.uni-button:active {
-    transform: rotateY(0deg) scale(1.0); /* Straightens and grows the button */
-    background-color: darkgreen;
-    color: black;
+    transform: rotateY(+40deg); /* Tilts the button away in the opposite direction */
 }
 
