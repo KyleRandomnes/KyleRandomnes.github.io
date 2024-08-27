@@ -23,7 +23,6 @@
 }
 
 /* Spin Wheels */
-/* Container for the buttons */
 .spin-wheel {
     display: flex;
     justify-content: space-around;
@@ -46,7 +45,7 @@
     transform: rotateY(-25deg); /* Tilts the button away in the opposite direction */
 }
 
-.button:hover {
+.uni-button:hover {
     transform: rotateY(0deg) scale(1.2); /* Straightens and grows the button */
     background-color: green;
     color: black;

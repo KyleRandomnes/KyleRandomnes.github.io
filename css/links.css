@@ -1,0 +1,18 @@
+/* this is for links*/
+a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: green !important;
+    text-decoration: underline; /* Add underline on hover */
+}
+
+a:visited {
+    color: lightgray;
+}
+
+a:active {
+    color: gray;
+}
