@@ -53,16 +53,57 @@
 /* Target .own-button when .uni-button is hovered */
 .uni-button:hover ~ .own-button {
     transform: scale(0.7); /* Make own-button smaller */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
 .uni-button:hover ~ .study-button {
     transform: scale(0.5); /* Make own-button smaller */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
 
 .own-button {
     transform: scale(1.1); /* Slightly larger for emphasis */
 }
+.own-button:active {
+    transform: rotateY(0deg) scale(1.5); /* Straightens and grows the button */
+    background-color: darkgreen;
+    color: black;
+}
+
+/* Target .own-button when .uni-button is hovered */
+.own-button:hover ~ .own-button {
+    transform: scale(0.7); /* Make own-button smaller */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+}
+.own-button:hover ~ .study-button {
+    transform: scale(0.5); /* Make own-button smaller */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+}
 
 .study-button {
     transform: rotateY(+40deg); /* Tilts the button away in the opposite direction */
 }
+.study-button:active {
+    transform: rotateY(0deg) scale(1.5); /* Straightens and grows the button */
+    background-color: darkgreen;
+    color: black;
+}
 
+/* Target .own-button when .uni-button is hovered */
+.study-button:hover ~ .own-button {
+    transform: scale(0.7); /* Make own-button smaller */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+}
+.study-button:hover ~ .study-button {
+    transform: scale(0.5); /* Make own-button smaller */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+}
+
+/* How to decide how link tree should look */
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    perspective: 1000px; /* Adds depth for 3D effect */
+}
