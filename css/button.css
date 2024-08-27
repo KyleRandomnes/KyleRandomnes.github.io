@@ -47,15 +47,6 @@
     background-color: darkgreen;
     color: black;
 }
-/* Target .own-button when .uni-button is hovered */
-.uni-button:hover ~ .own-button {
-    transform: scale(0.7); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
-}
-.uni-button:hover ~ .study-button {
-    transform: rotateY(+50deg) scale(0.5); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
-}
 
 /* Own button adjustment */
 .own-button {
@@ -70,16 +61,6 @@
 .own-button:active {
     background-color: darkgreen;
     color: black;
-}
-
-/* Target .own-button when .uni-button is hovered */
-.own-button:hover ~ .study-button {
-    transform: rotateY(+50deg) scale(0.7);
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
-}
-.own-button:hover ~ .uni-button {
-    transform: rotateY(-70deg) scale(0.7);
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 
 /* Study button adjustment */
@@ -97,17 +78,6 @@
     background-color: darkgreen;
     color: black;
 }
-
-/* Target .own-button when .uni-button is hovered */
-.study-button:hover ~ .own-button {
-    transform: scale(0.7); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
-}
-.study-button:hover ~ .uni-button {
-    transform: rotateY(-50deg) scale(0.5); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
-}
-
 
 
 /* How to decide how link tree should look */
