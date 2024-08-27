@@ -19,8 +19,12 @@
         <a href="uniProjects.html" class="button uni-button">
             <img src="images/AUT-Logo-1.jpg" alt="University Projects" />
         </a>
-        <a href="ownProjects.html" class="button own-button">Own Projects</a>
-        <a href="selfStudyProjects.html" class="button study-button">Self Study Projects</a>
+        <a href="ownProjects.html" class="button own-button">
+            <img src="images/AUT-Logo-1.jpg" alt="Own Projects" />
+        </a>
+        <a href="selfStudyProjects.html" class="button study-button">
+            <img src="images/AUT-Logo-1.jpg" alt="Self Study Projects" />
+        </a>
     </div>
 
     <!-- control how the 3 panels work while in focus -->
@@ -32,7 +36,7 @@
 
         // Add hover event for uniButton
         uniButton.addEventListener('mouseover', () => {
-            uniButton.style.transform = 'rotateY(0deg) scale(1.5)'
+            uniButton.style.transform = 'rotateY(0deg) scale(1.2)'
             ownButton.style.transform = 'scale(0.8)';
             studyButton.style.transform = 'rotateY(+50deg) scale(0.7)';
         });
