@@ -6,3 +6,15 @@
     height: 100px; /* Adjust height as needed */
     perspective: 1000px; /* Adds depth for 3D effect */
 }
+
+.social-links p {
+    margin: 5px 0; /* Adds space between stacked items */
+}
+
+.social-links a {
+    display: block; /* Makes the anchor tags block-level elements */
+    width: 200%; /* Makes each link take the full width of the container */
+    text-align: center; /* Centers text inside each link */
+    padding: 0; /* Reset padding to ensure button styles control padding */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
