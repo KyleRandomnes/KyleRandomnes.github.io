@@ -34,8 +34,8 @@
 
 /* Specific styles for buttons */
 .uni-button {
-    transform: rotateY(70deg); /* Tilts the button away */
-    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transform: rotateY(-70deg); /* Tilts the button away */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
 }
 
 .own-button {
@@ -43,7 +43,7 @@
 }
 
 .study-button {
-    transform: rotateY(-70deg); /* Tilts the button away in the opposite direction */
+    transform: rotateY(+70deg); /* Tilts the button away in the opposite direction */
 }
 
 .uni-button:hover {
