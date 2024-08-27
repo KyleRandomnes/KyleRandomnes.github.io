@@ -20,14 +20,15 @@
 }
 
 .project {
+    display: flex; /* Enables horizontal alignment */
+    align-items: flex-start; /* Aligns both children at the top */
     padding: 10px 20px;
+    box-sizing: border-box;
     font-family: 'Dot-Matrix', sans-serif;
     background-color: black;
     color: green;
     border: 2px solid #008000;
     width:90%;
-    display: flex; /* Enables horizontal alignment */
-    align-items: flex-start; /* Aligns both children at the top */
     transition: background-color 0.3s ease, color 0.3s ease;
     height: auto; /* Maintains aspect ratio */
     margin-left: 5%;
@@ -35,12 +36,34 @@
 }
 
 .project-text{
+    display: flex; /* Enables horizontal alignment */
+    align-items: flex-start; /* Aligns both children at the top */
+    box-sizing: border-box;
+    font-family: 'Dot-Matrix', sans-serif;
+    background-color: black;
+    color: green;
+    border: 2px solid #008000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: auto; /* Maintains aspect ratio */
+
     width: 80%;
     margin-left: 0;
+    box-sizing: border-box; /* Ensures padding is included in the width */
 }
 
 .project-img {
+    display: flex; /* Enables horizontal alignment */
+    align-items: flex-start; /* Aligns both children at the top */
+    box-sizing: border-box;
+    font-family: 'Dot-Matrix', sans-serif;
+    background-color: black;
+    color: green;
+    border: 2px solid #008000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: auto; /* Maintains aspect ratio */
+    margin-right: 0;
     width: 20%;
     margin-left: 80%;
-/*    padding-left: 10px;*/
+    box-sizing: border-box;
+    padding-left: 10px;
 }
