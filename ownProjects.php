@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <?php include 'includes/header.php'; ?>
     <body>
         <h1>View my Projects</h1>
-        <link rel="stylesheet" href="style.css">
 
         <!-- Links to other sites -->
         <p>Navigate my website</p>
