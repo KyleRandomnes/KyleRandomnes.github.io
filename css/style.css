@@ -15,7 +15,7 @@ body {
     color: Green;
     font-family: 'Dot-Matrix', sans-serif;
     font-size: 25px;
-  overflow: hidden; /* Hide overflow */
+    overflow: hidden; /* Hide overflow */
 }
 
 /* this is for span's and others */

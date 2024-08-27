@@ -18,3 +18,16 @@
     padding: 0; /* Reset padding to ensure button styles control padding */
     box-sizing: border-box; /* Ensures padding and border are included in the width */
 }
+
+.project {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Dot-Matrix', sans-serif;
+    background-color: black;
+    color: green;
+    border: 2px solid #008000;
+    width:80%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: auto; /* Maintains aspect ratio */
+    margin-left: 10%
+}
