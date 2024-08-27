@@ -35,7 +35,7 @@
 /* Specific styles for buttons */
 .uni-button {
     transform: rotateY(-40deg); /* Tilts the button away */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 
 .uni-button:hover {
@@ -53,15 +53,16 @@
 /* Target .own-button when .uni-button is hovered */
 .uni-button:hover ~ .own-button {
     transform: scale(0.7); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .uni-button:hover ~ .study-button {
     transform: scale(0.5); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 
 .own-button {
     transform: scale(1.1); /* Slightly larger for emphasis */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .own-button:active {
     transform: rotateY(0deg) scale(1.5); /* Straightens and grows the button */
@@ -72,15 +73,16 @@
 /* Target .own-button when .uni-button is hovered */
 .own-button:hover ~ .study-button {
     transform: scale(0.7); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .own-button:hover ~ .uni-button {
     transform: scale(0.7); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 
 .study-button {
     transform: rotateY(+40deg); /* Tilts the button away in the opposite direction */
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .study-button:active {
     transform: rotateY(0deg) scale(1.5); /* Straightens and grows the button */
@@ -91,11 +93,11 @@
 /* Target .own-button when .uni-button is hovered */
 .study-button:hover ~ .own-button {
     transform: scale(0.7); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .study-button:hover ~ .uni-button {
     transform: scale(0.5); /* Make own-button smaller */
-    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out, color 2.0s ease-in-out;
+    transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 
 
