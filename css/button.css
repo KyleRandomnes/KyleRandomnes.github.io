@@ -74,11 +74,11 @@
 
 /* Target .own-button when .uni-button is hovered */
 .own-button:hover ~ .study-button {
-    transform: rotateY(-50deg) scale(0.7);
+    transform: rotateY(+50deg) scale(0.7);
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .own-button:hover ~ .uni-button {
-    transform: rotateY(+50deg) scale(0.7);
+    transform: rotateY(-70deg) scale(0.7);
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 
