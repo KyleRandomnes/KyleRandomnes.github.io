@@ -13,6 +13,6 @@
 
         <!-- Links to references(Styles sheet for example) -->
         <p>References:</p>
-        <p><a href="references.php">references</a></p>
+        <p><a href="references.php">References</a></p>
     </body>
 </html>
