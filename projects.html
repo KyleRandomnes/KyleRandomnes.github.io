@@ -36,11 +36,10 @@
 
         // Add hover event for uniButton
         uniButton.addEventListener('mouseover', () => {
-            uniButton.style.transform = 'rotateY(0deg) scale(1.2)'
+            uniButton.style.transform = 'rotateY(0deg) scale(1.1)'
             ownButton.style.transform = 'scale(0.8)';
             studyButton.style.transform = 'rotateY(+50deg) scale(0.7)';
         });
-
         uniButton.addEventListener('mouseout', () => {
             uniButton.style.transform = 'rotateY(-40deg) scale(1.0)'
             ownButton.style.transform = 'scale(1.1)'; // Reset to original size
@@ -49,11 +48,10 @@
 
         // Add hover event for studyButton
         studyButton.addEventListener('mouseover', () => {
-            studyButton.style.transform = 'rotateY(0deg) scale(1.5)'
+            studyButton.style.transform = 'rotateY(0deg) scale(1.1)'
             ownButton.style.transform = 'scale(0.8)';
             uniButton.style.transform = 'rotateY(-50deg) scale(0.7)';
         });
-
         studyButton.addEventListener('mouseout', () => {
             studyButton.style.transform = 'rotateY(+40deg) scale(1.0)'
             ownButton.style.transform = 'scale(1.1)'; // Reset to original size
@@ -62,11 +60,10 @@
 
         // Add hover event for ownButton
         ownButton.addEventListener('mouseover', () => {
-            ownButton.style.transform = 'scale(1.5)';
-            uniButton.style.transform = 'rotateY(-50deg) scale(0.8)';
+            ownButton.style.transform = 'scale(1.2)';
+            uniButton.style.transform = 'rotateY(-50deg) scale(0.7)';
             studyButton.style.transform = 'rotateY(+50deg) scale(0.7)';
         });
-
         ownButton.addEventListener('mouseout', () => {
             ownButton.style.transform = 'scale(1.1)';
             uniButton.style.transform = 'rotateY(-40deg)'; // Reset to original tilt
