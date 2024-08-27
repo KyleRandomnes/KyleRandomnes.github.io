@@ -4,8 +4,14 @@
   src: url("../style/DOTMBold.TTF") format('truetype');
 }
 
+html, body {
+    overflow: auto; /* Ensures that content can overflow and a scrollbar appears */
+    height: auto;   /* Allows the body to grow beyond the viewport */
+}
+
 /* this is for body specific design */
 body {
+    
     background-color: black;
     color: Green;
     font-family: 'Dot-Matrix', sans-serif;
