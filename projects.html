@@ -10,8 +10,6 @@
 
     <!--Split into 3 sections most left should be school related
         middle should be personal right should be self study-->
-    Currently no projects placed here still working on the site
-    <p>
     <div class="labels">
         <label>University Projects:</label>
         <label>Own Projects:</label>
@@ -22,8 +20,8 @@
         <a href="ownProjects.html" class="button own-button">Own Projects</a>
         <a href="selfStudyProjects.html" class="button study-button">Self Study Projects</a>
     </div>
-    </p>
 
+    <!-- control how the 3 panels work while in focus -->
     <script>
         // Get the buttons
         const uniButton = document.querySelector('.uni-button');
@@ -33,8 +31,8 @@
         // Add hover event for uniButton
         uniButton.addEventListener('mouseover', () => {
             uniButton.style.transform = 'rotateY(0deg) scale(1.5)'
-            ownButton.style.transform = 'scale(0.7)';
-            studyButton.style.transform = 'rotateY(+50deg) scale(0.5)';
+            ownButton.style.transform = 'scale(0.8)';
+            studyButton.style.transform = 'rotateY(+50deg) scale(0.7)';
         });
 
         uniButton.addEventListener('mouseout', () => {
@@ -46,8 +44,8 @@
         // Add hover event for studyButton
         studyButton.addEventListener('mouseover', () => {
             studyButton.style.transform = 'rotateY(0deg) scale(1.5)'
-            ownButton.style.transform = 'scale(0.7)';
-            uniButton.style.transform = 'rotateY(-50deg) scale(0.5)';
+            ownButton.style.transform = 'scale(0.8)';
+            uniButton.style.transform = 'rotateY(-50deg) scale(0.7)';
         });
 
         studyButton.addEventListener('mouseout', () => {
@@ -59,7 +57,7 @@
         // Add hover event for ownButton
         ownButton.addEventListener('mouseover', () => {
             ownButton.style.transform = 'scale(1.5)';
-            uniButton.style.transform = 'rotateY(-50deg) scale(0.7)';
+            uniButton.style.transform = 'rotateY(-50deg) scale(0.8)';
             studyButton.style.transform = 'rotateY(+50deg) scale(0.7)';
         });
 
