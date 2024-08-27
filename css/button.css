@@ -27,7 +27,7 @@
     width: 100%; /* Makes the image fill the button */
     height: auto; /* Maintains aspect ratio */
     border-radius: 2px; /* Matches the button's border-radius, if any */
-    padding: 2px 4px;
+    padding: 0;
 }
 
 /* Spin Wheels */
@@ -42,6 +42,7 @@
 
 /* Uni button adjustment */
 .uni-button {
+    padding: 0;
     transform: rotateY(-40deg); /* Tilts the button away */
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
