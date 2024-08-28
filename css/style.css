@@ -19,9 +19,9 @@ body {
 }
 
 .navigation-bar {
-    display: flex; /* Changes layout to flexbox for horizontal alignment */
-    justify-content: center; /* Centers the links within the navigation bar */
-    align-items: center; /* Vertically centers the content */
+    display: flex; /* Aligns the links horizontally */
+    justify-content: flex-start; /* Aligns the links to the left */
+    align-items: center; /* Vertically centers the links within the bar */
     padding: 10px 20px;
     font-family: 'Dot-Matrix', sans-serif;
     background-color: black;
@@ -29,6 +29,10 @@ body {
     border: 2px solid #008000;
     width: 100%; /* Ensures the navigation bar spans the entire width of the page */
     box-sizing: border-box; /* Includes padding and border in the element's total width/height */
+    position: fixed; /* Fixes the bar's position on the screen */
+    bottom: 0; /* Anchors the bar to the bottom of the page */
+    left: 0; /* Ensures the bar starts from the left edge of the screen */
+    z-index: 1000; /* Ensures the bar stays on top of other elements */
 }
 
 .navigation-bar a {
