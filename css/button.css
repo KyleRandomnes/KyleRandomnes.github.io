@@ -95,6 +95,5 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 200px; /* Adjust height as needed */
-    perspective: 1000px; /* Adds depth for 3D effect */
+    height: auto; /* Adjust height as needed */
 }
