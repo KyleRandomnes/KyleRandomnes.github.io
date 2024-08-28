@@ -18,6 +18,20 @@ body {
     overflow: hidden; /* Hide overflow */
 }
 
+.navigation-bar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Dot-Matrix', sans-serif;
+    background-color: black;
+    color: green;
+    border: 2px solid #008000;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
 /* this is for span's and others */
     .blue {
         color: blue;
