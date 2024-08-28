@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- JavaScript will load the header content here -->
+</head>
+
+<body>
+    <h1>KyleRandomnes</h1>
+
+    <div class="project">
+        <div class="project-text">
+            <p>
+                My Name is Kyle, I study Computer Science at AUT.
+                <p></p><p></p>
+                I enjoy learning many different subjects, and I also enjoy teaching people
+                about subjects I've learnt that they may not know about. I am currently learning
+                Game Development, Programming Languages and Theory of Computation at AUT.
+                For myself, I am learning how to program small projects to make my life
+                more convient, such as a Discord Bot.
+                <p></p>
+                I've been told by my peers that I'm friendly and easy to get along with.
+                I also seem to get a laugh out of most of them at some point with my
+                witty comebacks.
+            </p>
+        </div>
+        <div class="project-img">
+            <p><img src="images/AUT-Logo-1.jpg" alt="AUT Logo" /></p>
+        </div>
+    </div>
+
+    <p>Navigate my website</p>
+    <p><a href="index.html">Return Home</a></p>
+
+</body>
+<script>
+    fetch('header/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('head').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+
+</html>
