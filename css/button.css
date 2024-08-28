@@ -47,7 +47,7 @@
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .uni-button:hover {
-    background-color: green;
+    background-color: black;
     color: black;
 }
 .uni-button:active {
@@ -63,7 +63,7 @@
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .own-button:hover {
-    background-color: green;
+    background-color: black;
     color: black;
 }
 .own-button:active {
@@ -78,7 +78,7 @@
     transition: transform 2.0s ease-in-out, background-color 2.0s ease-in-out;
 }
 .study-button:hover {
-    background-color: green;
+    background-color: black;
     color: black;
 }
 .study-button:active {
