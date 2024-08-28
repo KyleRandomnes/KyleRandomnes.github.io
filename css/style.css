@@ -19,17 +19,30 @@ body {
 }
 
 .navigation-bar {
-    display: inline-block;
+    display: flex; /* Changes layout to flexbox for horizontal alignment */
+    justify-content: center; /* Centers the links within the navigation bar */
+    align-items: center; /* Vertically centers the content */
     padding: 10px 20px;
     font-family: 'Dot-Matrix', sans-serif;
     background-color: black;
     color: green;
     border: 2px solid #008000;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Ensures the navigation bar spans the entire width of the page */
+    box-sizing: border-box; /* Includes padding and border in the element's total width/height */
+}
 
+.navigation-bar a {
+    margin: 0 10px; /* Adds space between each link */
+    color: green; /* Ensures the links are green */
+    text-decoration: none; /* Removes underline from links */
+    padding: 5px 10px; /* Adds padding inside each link */
+    border-radius: 4px; /* Optional: Adds slightly rounded corners to the link area */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navigation-bar a:hover {
+    background-color: green; /* Changes background color on hover */
+    color: black; /* Changes text color on hover */
 }
 
 /* this is for span's and others */
