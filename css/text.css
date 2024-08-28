@@ -13,7 +13,7 @@
 
 .social-links a {
     display: block; /* Makes the anchor tags block-level elements */
-    width: 140%; /* Adjust the width to make the buttons wider (70% of the container) */
+    width: 400%; /* Adjust the width to make the buttons wider (70% of the container) */
     text-align: center; /* Centers text inside each link */
     padding: 15px 20px; /* Increases padding to make the buttons taller */
     box-sizing: border-box; /* Ensures padding and border are included in the width */
