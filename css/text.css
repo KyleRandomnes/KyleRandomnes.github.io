@@ -24,6 +24,9 @@
 
 .project {
     display: flex; /* Enables horizontal alignment */
+
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+
     align-items: flex-start; /* Aligns both children at the top */
     padding: 10px 20px;
     box-sizing: border-box;
@@ -38,7 +41,8 @@
 }
 
 .project-text {
-    flex: 1 1 70%; /* Flex properties: grow, shrink, basis */
+    flex: 1 1 60%; /* Adjusted to allow more space for video */
+
     box-sizing: border-box;
     padding: 10px;
     background-color: black;
@@ -46,9 +50,16 @@
 }
 
 .project-img {
-    flex: 1 1 30%; /* Flex properties: grow, shrink, basis */
+    flex: 1 1 40%; /* Flex properties: grow, shrink, basis */
     box-sizing: border-box;
     padding: 10px;
     background-color: black;
     margin-left: 10px; /* Adds space between text and image */
+}
+
+.project-img video {
+    width: 100%; /* Makes video responsive to container size */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Limits max width */
+    border: 2px solid #008000; /* Optional: add border for styling */
 }
