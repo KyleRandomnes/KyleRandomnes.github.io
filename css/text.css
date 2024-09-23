@@ -25,7 +25,7 @@
 .project {
     display: flex; /* Enables horizontal alignment */
 
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+/*    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 
     align-items: flex-start; /* Aligns both children at the top */
     padding: 10px 20px;
