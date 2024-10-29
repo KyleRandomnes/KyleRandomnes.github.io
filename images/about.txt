@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Eczar
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/eczar/v22/BXR2vF3Pi-DLmxcpJB-qbNTyTMDXL96WqTIVKWJKWg.ttf
-- Font License: undefined)
