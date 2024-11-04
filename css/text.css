@@ -5,7 +5,14 @@
     width: 100%;
     height: 100px; /* Adjust height as needed */
     perspective: 1000px; /* Adds depth for 3D effect */
-    font-size: 48px; /* Adjust size of font...will be surpised how many times you've missed this */
+    font-size: 35px; /* Adjust size of font...will be surpised how many times you've missed this */
+}
+.labels label:first-child { /* University Projects */
+    transform: translateX(-25px); /*shift left*/
+}
+
+.labels label:last-child { /* Self Study Projects */
+    transform: translateX(25px); /*shift right*/
 }
 
 .social-links p {
