@@ -35,14 +35,10 @@
             .catch(error => console.error('Error loading navigation bar:', error));
     </script>
     <script>
-        // Load the external hotkeys script from the functions folder
         fetch('functions/hotkeys.js')
             .then(response => response.text())
             .then(data => {
-                // Create a new script element
-                const script = document.createElement('script');
-                script.text = data; // Set the script content
-                document.body.appendChild(script); // Append script to the body
+                document.body.innerHTML += data; // Append hotkeys script to body
             })
             .catch(error => console.error('Error loading hotkeys:', error));
     </script>
