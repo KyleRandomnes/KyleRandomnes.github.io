@@ -22,8 +22,14 @@ a:active {
     text-decoration: none;
     color: inherit;
 }
+.project-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.project-link:visited {
+    color: green !important;
+}
 
-/* Add a pointer cursor to indicate clickability */
-.project-link {
-    cursor: pointer;
+.project-link:active {
+    color: green !important;
 }
