@@ -16,3 +16,14 @@ a:visited {
 a:active {
     color: gray;
 }
+
+/* Remove text underline, inherit text color */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Add a pointer cursor to indicate clickability */
+.project-link {
+    cursor: pointer;
+}
