@@ -21,8 +21,9 @@ a:active {
 .project-link {
     text-decoration: none;
     color: inherit;
+    cursor: default;
 }
-.project-link:hover .project-link {
+.project-link:hover {
     text-decoration: none !important;
     color: inherit;
 }
@@ -32,9 +33,4 @@ a:active {
 
 .project-link:active {
     color: green;
-}
-
-/* Add a pointer cursor to indicate clickability */
-.project-link {
-    cursor: none;
 }
