@@ -43,7 +43,16 @@
                 })
                 .catch(error => console.error('Error loading hotkeys:', error));
         </script>
-    
+        <script>
+            document.addEventListener('keydown', function(event) {
+                // Navigate to the homepage with Alt + H
+                if (event.altKey && event.key === 'h') {
+                    window.location.href = 'index.html';
+                    
+                }
+                // More hotkeys to be added
+            });
+        </script>
 </body>
 
 </html>
