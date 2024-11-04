@@ -33,3 +33,8 @@ a:active {
 .project-link:active {
     color: green !important;
 }
+
+/* Add a pointer cursor to indicate clickability */
+.project-link {
+    cursor: none;
+}
