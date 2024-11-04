@@ -23,7 +23,7 @@ a:active {
     color: inherit;
 }
 .project-link:hover {
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
 }
 .project-link:visited {
