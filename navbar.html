@@ -1,0 +1,22 @@
+    <!-- Links to other sites -->
+    <div class="navigation-bar">
+        <!-- Home Page -->
+        <a href="index.html">Home Page</a>
+        <!-- Links to other Social Media -->
+        <a href="linkTree.html">Contact Me</a>
+        <!-- Link to about me-->
+        <a href="aboutMe.html">About me</a>
+        <!-- Reference Link -->
+        <a href="references.html">References</a>
+
+        <!-- Back Button -->
+        <a href="javascript:void(0);" onclick="window.history.back();" id="backButton" style="display: none;">Back</a>
+
+        <script>
+            // Check if there’s a history to go back to
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        </script>
+        </div>
