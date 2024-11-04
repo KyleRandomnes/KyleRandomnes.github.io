@@ -7,6 +7,14 @@
 </head>
 
 <body>
+    <script>
+        fetch('header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
     <h1>Here's what I'm learning on my own</h1>
 
     <div class="navigation-bar">
@@ -21,16 +29,6 @@
         <!-- Back Button -->
         <a href="javascript:void(0);" onclick="window.history.back();">Back</a>
     </div>
-
-    <script>
-        fetch('header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('head').innerHTML += data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-
 </body>
 
 </html>

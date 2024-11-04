@@ -7,6 +7,14 @@
 </head>
 
 <body>
+    <script>
+        fetch('header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
     <h1>KyleRandomnes</h1>
 
     <div class="project">
@@ -30,28 +38,22 @@
             <p><img src="/images/kyle.png" alt="Profile Photo" /></p>
         </div>
     </div>
-
-    <div class="navigation-bar">
-        <!-- Home Page -->
-        <a href="index.html">Home Page</a>
-        <!-- Links to other Social Media -->
-        <a href="linkTree.html">Contact Me</a>
-        <!-- Link to about me-->
-        <a href="aboutMe.html">About me</a>
-        <!-- Reference Link -->
-        <a href="references.html">References</a>
-        <!-- Back Button -->
-        <a href="javascript:void(0);" onclick="window.history.back();">Back</a>
-    </div>
-
+    <!-- Links to other sites -->
+    <div id="navbar"></div>
+    <script>
+        // Load the external navigation bar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+    
+                // Check if there’s a history to go back to AFTER loading the navbar
+                if (window.history.length > 1) {
+                    // Show the Back button
+                    document.getElementById('backButton').style.display = 'inline';
+                }
+            })
+            .catch(error => console.error('Error loading navigation bar:', error));
+    </script>
 </body>
-<script>
-    fetch('header/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('head').innerHTML += data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-</script>
-
 </html>
