@@ -140,7 +140,18 @@
     </div>
     </a>
     
-    <div id="navbar"></div>
+    <div id="navbar">
+        <!-- Back Button -->
+        <a href="javascript:void(0);" onclick="window.history.back();" id="backButton" style="display: none;">Back</a>
+
+        <script>
+            // Check if there’s a history to go back to
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        </script>
+</div>
 
     <script>
         // Load the external navigation bar
