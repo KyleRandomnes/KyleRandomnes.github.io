@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener('keydown', function(event) {
         // Navigate to the homepage with Alt + H
         if (event.altKey && event.key === 'k') {
@@ -6,4 +6,3 @@ document.addEventListener('keydown', function(event) {
         }
          //More hotkeys to be added
     });
-</script>
