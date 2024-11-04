@@ -157,15 +157,8 @@
             })
             .catch(error => console.error('Error loading navigation bar:', error));
     </script>
-        <!-- Load the external hotkeys script from the functions folder -->
-        <script>
-            fetch('functions/hotkeys.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.body.innerHTML += data; // Append hotkeys script to body
-                })
-                .catch(error => console.error('Error loading hotkeys:', error));
-        </script>
+<!-- Load the external hotkeys script from the functions folder -->
+<script src="functions\hotkeys.js"></script>
     
 </body>
 
