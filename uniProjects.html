@@ -7,6 +7,15 @@
 </head>
 
 <body>
+    <script>
+        fetch('header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
     <h1>This is what I made with my University</h1>
     <!-- Copy this to all projects basically -->
     <div class="project">
@@ -22,7 +31,6 @@
     </div>
 
     <p class="input-space">Ternion Game Development</p>
-    <p>changes</p>
     <a href="ownProjects.html" class="project-link">
     <div class="project">
         <div class="project-text">
@@ -46,7 +54,8 @@
     </a>
 
     <p class="input-space">State Machines Game Development</p>
-    <div class="project">
+    <a href="ownProjects.html" class="project-link">
+        <div class="project">
         <div class="project-text">
             <p>
                 This was my first assignment in game development, where I learnt C++ and 
@@ -65,9 +74,11 @@
             </p>
         </div>
     </div>
-    
+    </a>
+
     <p class="input-space">Helicopter Graphics Programming</p>
-    <div class="project">
+    <a href="ownProjects.html" class="project-link">
+        <div class="project">
         <div class="project-text">
             <p>
                 This was my second experience using FreeGLUT libraries, where I learnt to create a 3D 
@@ -87,9 +98,11 @@
             </p>
         </div>
     </div>
-
+    </a>
+ 
     <p class="input-space">Snowman Graphics Programming</p>
-    <div class="project">
+    <a href="ownProjects.html" class="project-link">
+        <div class="project">
         <div class="project-text">
             <p>
                 This was my first experience using FreeGLUT libraries, where I learned to create a 2D 
@@ -108,8 +121,10 @@
             </p>
         </div>
     </div>
+    </a>
 
     <p class="input-space">Unity Fishing Chronicles Standard Development Practices</p>
+    <a href="ownProjects.html" class="project-link">
     <div class="project">
         <div class="project-text">
             <p>
@@ -123,7 +138,8 @@
             <p><img src="images\uniProjects\Other\fishingGame.png" alt="Fishing Game" /></p>
         </div>
     </div>
-
+    </a>
+    
     <!-- Links to other sites -->
     <div class="navigation-bar">
         <!-- Home Page -->
@@ -137,15 +153,6 @@
         <!-- Back Button -->
         <a href="javascript:void(0);" onclick="window.history.back();">Back</a>
     </div>
-
-    <script>
-        fetch('header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('head').innerHTML += data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
 
 </body>
 
