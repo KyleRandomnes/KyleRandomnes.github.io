@@ -16,6 +16,9 @@ document.addEventListener('keydown', function(event) {
         if (event.altKey && event.key === 'a') {
             window.location.href = 'aboutMe.html';
         }
+        if (event.altKey && event.key ==='b'){
+            window.history.back();
+        }
 
          //More hotkeys to be added
     });
