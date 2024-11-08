@@ -32,9 +32,6 @@
 
 .project {
     display: flex; /* Enables horizontal alignment */
-    transform-origin: center bottom; /* Adjusts the rotational pivot */
-    transform-style: preserve-3d;
-    transition: transform 1s ease; /* Smooth transition for rotation */
 
 /*    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 
@@ -79,8 +76,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; /* Hide default scrollbar */
-    perspective: 1000px; /* Adds 3D perspective */
+    overflow: hidden;
+    perspective: 1000px;
     height: 400px; /* Adjust based on your preference */
+    transform-style: preserve-3d;
+    transform-origin: center center; /* Set the pivot to the center */
+    transition: transform 1s ease; /* Smooth transition for rotation */
 }
-

@@ -160,25 +160,24 @@
         })
         .catch(error => console.error('Error loading navigation bar:', error));
 </script>
+
+<!-- Scroll wheel -->
 <script>
     let angle = 0;
 
-document.querySelector('.scroll').addEventListener('wheel', (event) => {
-    // Adjust the rotation speed and direction
-    const rotationStep = 15;
-    if (event.deltaY > 0) {
-        angle -= rotationStep; // Scroll down, rotate up
-    } else {
-        angle += rotationStep; // Scroll up, rotate down
-    }
-
-    // Apply the rotation to each project item
-    document.querySelectorAll('.project').forEach((item, index) => {
-        const rotationAngle = angle + index * rotationStep; // Slightly offset each item
-        item.style.transform = `rotateX(${rotationAngle}deg) translateZ(200px)`;
+    document.querySelector('.scroll').addEventListener('wheel', (event) => {
+        const rotationStep = 10; // Adjust for faster or slower spin
+        if (event.deltaY > 0) {
+            angle -= rotationStep; // Scroll down, rotate up
+        } else {
+            angle += rotationStep; // Scroll up, rotate down
+        }
+    
+        // Apply the rotation to the entire .scroll container
+        document.querySelector('.scroll').style.transform = `rotateX(${angle}deg)`;
     });
-});
 </script>
+
 <!-- Load the external hotkeys script from the functions folder -->
 <script src="functions\hotkeys.js"></script>
 
