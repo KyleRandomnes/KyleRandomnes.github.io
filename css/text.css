@@ -71,15 +71,3 @@
     max-width: 600px; /* Limits max width */
     border: 2px solid #008000; /* Optional: add border for styling */
 } /* just need this "Saved" */
-
-.scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    perspective: 1000px;
-    height: 400px; /* Adjust based on your preference */
-    transform-style: preserve-3d;
-    transform-origin: center center; /* Set the pivot to the center */
-    transition: transform 1s ease; /* Smooth transition for rotation */
-}
