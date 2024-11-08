@@ -32,6 +32,9 @@
 
 .project {
     display: flex; /* Enables horizontal alignment */
+    transform-origin: center bottom; /* Adjusts the rotational pivot */
+    transform-style: preserve-3d;
+    transition: transform 1s ease; /* Smooth transition for rotation */
 
 /*    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 
@@ -70,4 +73,14 @@
     height: auto; /* Maintain aspect ratio */
     max-width: 600px; /* Limits max width */
     border: 2px solid #008000; /* Optional: add border for styling */
-} /* just need this "Saved"
+} /* just need this "Saved" */
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Hide default scrollbar */
+    perspective: 1000px; /* Adds 3D perspective */
+    height: 400px; /* Adjust based on your preference */
+}
+
