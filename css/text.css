@@ -47,7 +47,10 @@
     height: auto; /* Maintains aspect ratio */
     margin: 0 auto; /* Centers the project div */
 }
-
+.project:hover
+{
+    box-shadow: 0 0 10px 2px limegreen; /* Green glow effect */
+}
 .project-text {
     flex: 1 1 60%; /* Adjusted to allow more space for video */
 
