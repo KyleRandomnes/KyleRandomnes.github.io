@@ -46,11 +46,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     height: auto; /* Maintains aspect ratio */
     margin: 0 auto; /* Centers the project div */
-    transition: box-shadow 1s ease, border-color 0.3s ease;
-}
-.project:hover
-{
-    box-shadow: 0 0 15px 5px limegreen; /* Green glow effect */
 }
 .project-text {
     flex: 1 1 60%; /* Adjusted to allow more space for video */

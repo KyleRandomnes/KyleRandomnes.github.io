@@ -22,11 +22,14 @@ a:active {
     text-decoration: none;
     color: inherit;
     cursor: default;
+    transition: box-shadow 1s ease, border-color 0.3s ease;
 }
 .project-link:hover {
     text-decoration: none !important;
+    box-shadow: 0 0 15px 5px limegreen; /* Green glow effect */
     color: inherit;
 }
+
 .project-link:visited {
     color: green;
 }
