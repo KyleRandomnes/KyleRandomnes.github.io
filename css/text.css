@@ -73,9 +73,15 @@
     margin-left: 10px; /* Adds space between text and image */
 }
 
+.project-img img {
+    width: 100%; /* Makes video responsive to container size */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Limits max width */
+}
+
+
 .project-img video {
     width: 100%; /* Makes video responsive to container size */
     height: auto; /* Maintain aspect ratio */
     max-width: 600px; /* Limits max width */
-    border: 2px solid #008000; /* Optional: add border for styling */
 } /* just need this "Saved" */
