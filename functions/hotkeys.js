@@ -19,6 +19,8 @@ document.addEventListener('keydown', function(event) {
         if (event.altKey && event.key ==='b'){
             window.history.back();
         }
-
+        if (event.altKey && event.key ==='l'){
+            window.location.href = '/oats.html';
+        }
          //More hotkeys to be added
     });

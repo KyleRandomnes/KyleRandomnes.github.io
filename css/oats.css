@@ -1,0 +1,81 @@
+/* General body design (remains unchanged) */
+body {    
+    background-color: black;
+    color: green;
+    font-family: 'Dot-Matrix', sans-serif;
+    font-size: 25px;
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Specific styles for the hidden birthday heart page */
+.birthday-page {
+    position: relative; /* Ensure the hidden heart is positioned correctly relative to the body */
+}
+
+/* Hidden link for triggering the heart */
+.hidden-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0;  /* Hide the link but keep it functional */
+    text-decoration: none;
+    color: transparent;
+}
+
+/* Heart design */
+.heart {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: visibility 0s 0.5s;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -100px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -100px;
+}
+
+.heart-text {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 10;
+    visibility: hidden;
+}
+
+/* Make heart visible when clicked */
+#hidden-heart:target {
+    visibility: visible;
+    transition: visibility 0s 0s;
+}
+
+#hidden-heart:target .heart-text {
+    visibility: visible;
+}
+
+#hidden-heart:target .heart {
+    visibility: visible;
+    transition: visibility 0s 0s;
+}
