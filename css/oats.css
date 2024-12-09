@@ -33,7 +33,7 @@
     top: 35%; /* Adjust this to move text down a little */
     left: 50%;
     transform: translateX(-50%); /* Center text horizontally */
-    color: white;
+    color: D5ffff;
     font-size: 14px; /* Adjust size to fit text within the heart */
     font-weight: bold;
     text-align: center;
