@@ -1,3 +1,12 @@
+#homepage {
+    height: 100%;
+    margin: 0;
+  }
+  
+  #homepage html, #homepage body {
+    height: 100%;
+    margin: 0;
+  }
 .unselectable {
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -12,7 +21,11 @@
  #wrapper {
     height: -webkit-fill-available;
     width: -webkit-fill-available;
-    background: #fff;
+    background: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: translate(-50%, -50%);
   }
   .heart {
    position: relative;
