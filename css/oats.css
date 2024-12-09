@@ -21,34 +21,33 @@
  .filled:after {
    background: red !important;
  }
- #wrapper {
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 40vh;  /* Push it down by half of the viewport height */
-    }
-    .heart {
+#wrapper {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;  /* Push it down by half of the viewport height */
+}
+.heart {
    position: relative;
    top: calc(50% - 45px);   /* 1/2 height of wrapper - 1/2 height of heart */
    left: calc(50% - 50px);  /* 1/2 width of wrapper  - 1/2 width of heart */
-   width: 100px;
-   height: 90px;
- }
+   width: 640px;            /* Increased width */
+   height: 576px;           /* Increased height */
+}
  .heart:before,
  .heart:after {
    position: absolute;
    content: "";
    top: 0px;
-   width: 50px;
-   height: 80px;
-   background: inherit;
+   width: 320px;            /* Adjusted for larger size */
+   height: 512px;           /* Adjusted for larger size */
    -moz-border-radius: 50px 50px 0 0;
-        border-radius: 50px 50px 0 0;
+        border-radius: 100% 100% 0 0;
  }
  .heart:before {
-   left: 50px;
+   left: 5vw;             /* Adjusted for larger size */
    -webkit-transform: rotate(-45deg);
       -moz-transform: rotate(-45deg);
        -ms-transform: rotate(-45deg);
@@ -65,7 +64,7 @@
    border-bottom: 1px solid red;
  }
  .heart:after {
-   left: 0px;
+   left: -19vw;
    -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
        -ms-transform: rotate(45deg);
