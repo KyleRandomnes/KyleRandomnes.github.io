@@ -1,5 +1,5 @@
 #heart {
-    position: absolute; 
+    position: fixed; 
     width: 100px; 
     height: 90px; 
     top: 50%; 
@@ -8,7 +8,7 @@
 }
 
 #heart:before, #heart:after {
-    position: absolute; 
+    position: fixed; 
     content: ""; 
     left: 50px; 
     top: 0; 
@@ -27,7 +27,7 @@
 }
 
 #heart-text {
-    position: absolute;
+    position: fixed;
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
