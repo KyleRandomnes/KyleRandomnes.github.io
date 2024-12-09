@@ -1,4 +1,4 @@
-#heart { 
+#heart {
     position: relative; 
     width: 100px; 
     height: 90px; 
@@ -21,4 +21,16 @@
     left: 0; 
     transform: rotate(45deg); 
     transform-origin :100% 100%; 
+}
+
+/* Text that will appear on top of the heart */
+#heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
 }
