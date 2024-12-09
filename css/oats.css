@@ -1,9 +1,9 @@
-.homepage {
+#homepage {
     height: 100%;
     margin: 0;
   }
   
-  .homepage html, .homepage body {
+  #homepage html, #homepage body {
     height: 100%;
     margin: 0;
   }
