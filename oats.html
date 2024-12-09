@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Birthday Heart</title>
-    
+    <title>Hidden Birthday Heart</title>    
 </head>
-<script>
-    fetch('https://kylerandomnes.github.io/header/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('head').innerHTML += data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-</script>
 <body class="birthday-page">
-    <p></p>
+    <script>//this now takes in header
+        fetch('https://kylerandomnes.github.io/header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+        <p></p>
     <div id="heart">
                 <div id="heart-text">Happy Birthday Oats</div>
     </div>
