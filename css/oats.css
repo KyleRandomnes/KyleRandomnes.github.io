@@ -23,13 +23,12 @@
  }
  #wrapper {
     background: #fff;
-    /* No need for height: -webkit-fill-available; */
-    /* Flexbox will handle centering */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+    margin-top: 40vh;  /* Push it down by half of the viewport height */
+    }
     .heart {
    position: relative;
    top: calc(50% - 45px);   /* 1/2 height of wrapper - 1/2 height of heart */
