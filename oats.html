@@ -14,12 +14,51 @@
             })
             .catch(error => console.error('Error loading header:', error));
     </script>
+    <script>
+        function toggleFill(heart, className) {  
+            if (!hasClass(heart, className)) {
+              addClass(heart, className);
+            } else {
+              removeClass(heart, className);
+            }
+          }
+          
+          function addClass(el, className) {
+            if (el.classList) {
+              el.classList.add(className);
+            } else {
+              el.className += ' ' + className;
+            }
+          }
+          
+          function removeClass(el, className) {
+            if (el.classList) {
+              el.classList.remove(className);
+            } else {
+              el.className = el.className.replace(
+                new RegExp('(^|\\b)' + className.split(' ').join('|') +
+                           '(\\b|$)', 'gi'), ' ');
+            }
+          }
+          
+          function hasClass(el, className) {
+            if (el.classList) {
+              return el.classList.contains(className);
+            } else {
+              return new RegExp('(^| )' + className +
+                         '( |$)', 'gi').test(el.className);
+            }
+          }
+    </script>
         <p></p>
-        <div id="heart"></div>
-        <div class="heart-container">
-            <div id="heart-text">Happy Birthday Oats</div>
-        </div>
-        <p></p>
-    Change 1
+        <div id="wrapper">
+            <div class="heart" onclick="toggleFill(this, 'filled')">
+              <div class="heart-text unselectable">
+                Heart
+              </div>
+            </div>
+          </div>
+                  <p></p>
+    Change 3
 </body>
 </html>
