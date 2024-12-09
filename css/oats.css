@@ -42,7 +42,7 @@
     top: 35%; /* Adjust this to move text down a little */
     left: 50%;
     transform: translateX(-50%); /* Center text horizontally */
-    color: white;
+    color: #D5FFFF;
     font-size: 14px;
     font-weight: bold;
     z-index: 2; /* Ensure text is above the heart */
