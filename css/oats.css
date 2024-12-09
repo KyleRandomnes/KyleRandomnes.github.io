@@ -13,7 +13,7 @@
    width: 300px;
    height: 180px;
    background: #000;
-   top: 50%;  /* Position from the top of the screen */
+   bottom: 50%;  /* Position from the top of the screen */
    left: 50%; /* Position from the left of the screen */
    transform: translate(-50%, -50%); /* Offset by half of its width and height */
    position: relative; /* Ensure the heart is positioned relative to this container */
