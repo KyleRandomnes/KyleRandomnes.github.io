@@ -1,7 +1,9 @@
 #heart {
     position: relative;
     width: 100px; 
-    height: 100px; /* Increase height to include space for text */
+    height: 100px; /* Height for square part of the heart */
+    background: red; /* Add background color to the square part of the heart */
+    border-radius: 10px; /* Slight rounding to the square's corners for a smooth look */
 }
 
 #heart:before, #heart:after { 
@@ -33,4 +35,5 @@
     font-size: 14px; /* Adjust size to fit text within the heart */
     font-weight: bold;
     text-align: center;
+    z-index: 1; /* Ensure text is above the square part */
 }
