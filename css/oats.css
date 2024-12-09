@@ -1,41 +1,49 @@
+/* Container for the heart and text */
+.heart-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Heart shape */
 #heart {
     position: relative;
-    width: 100px; 
-    height: 100px; /* Height for square part of the heart */
-    background: red; /* Add background color to the square part of the heart */
-    border-radius: 10px; /* Slight rounding to the square's corners for a smooth look */
-    z-index: 1; /* Lower z-index to make the square part appear beneath the text */
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 10px;
 }
 
-#heart:before, #heart:after { 
-    position: absolute; 
-    content: ""; 
-    left: 50px; 
-    top: 0; 
-    width: 50px; 
-    height: 80px; 
-    background: red; 
-    border-radius: 50px 50px 0 0; 
-    transform: rotate(-45deg); 
-    transform-origin: 0 100%; 
-    z-index: 2; /* Circles will have a higher z-index to be on top of the square */
-} 
-
-#heart:after { 
-    left: 0; 
-    transform: rotate(45deg); 
-    transform-origin :100% 100%; 
+/* Top circular parts of the heart */
+#heart:before, #heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
 }
 
-/* Text inside the square center of the heart */
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Text inside the heart container */
 #heart-text {
     position: absolute;
-    top: 10%; /* Adjust this to move text down a little */
+    top: 35%; /* Adjust this to move text down a little */
     left: 50%;
     transform: translateX(-50%); /* Center text horizontally */
-    color: D5ffff !important;
-    font-size: 14px; /* Adjust size to fit text within the heart */
+    color: white;
+    font-size: 14px;
     font-weight: bold;
-    text-align: center;
-    z-index: 3; /* Higher z-index to ensure text is above everything else */
+    z-index: 2; /* Ensure text is above the heart */
 }
