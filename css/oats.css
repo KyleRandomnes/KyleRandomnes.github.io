@@ -1,8 +1,11 @@
 #homepage {
-    height: 100%;
+    height: 100%;  /* Ensure the body takes up full height */
     margin: 0;
+    display: flex; /* Apply Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Optional: Stack elements vertically */
   }
-  
   #homepage html, #homepage body {
     height: 100%;
     margin: 0;
@@ -19,12 +22,15 @@
    background: red !important;
  }
  #wrapper {
-    height: -webkit-fill-available;
-    width: -webkit-fill-available;
     background: #fff;
-    transform: translate(0%, -0%);
+    /* No need for height: -webkit-fill-available; */
+    /* Flexbox will handle centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  .heart {
+    .heart {
    position: relative;
    top: calc(50% - 45px);   /* 1/2 height of wrapper - 1/2 height of heart */
    left: calc(50% - 50px);  /* 1/2 width of wrapper  - 1/2 width of heart */
