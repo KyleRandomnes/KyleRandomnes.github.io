@@ -26,12 +26,3 @@
     transform-origin: 100% 100%;
 }
 
-#heart-text {
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    color: #D5FFFF;
-    font-size: 24px; /* You can adjust this to your preferred size */
-    text-align: center; /* Center the text horizontally */
-}
