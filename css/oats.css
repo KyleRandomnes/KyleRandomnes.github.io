@@ -121,6 +121,6 @@ transform: scale(0.5);
     font-size: 3vw;         /* Adjust font size to be responsive to screen size */
     font-weight: bold;
     text-align: center;
-    color: #D5FFFF;         /* Light text color */
+    color: #FFF;         /* Light text color */
     line-height: 1.2;       /* Adjust line height for better text spacing */
  }
