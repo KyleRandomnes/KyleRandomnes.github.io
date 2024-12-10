@@ -8,6 +8,7 @@
   }
   #homepage html, #homepage body {
     height: 100%;
+    overflow: hidden; /* Disable scrolling */
     margin: 0;
   }
   .unselectable {
@@ -81,13 +82,15 @@
    border-bottom: 1px solid red;
  }
  .heart-text {
-   position: absolute;
-   top: 0;
-   left: calc(50px - 30px); /* 1/2 width of heart  - 1/2 width of text */
-   z-index: 100;
-   line-height: 66px;
-   text-align: center;
-   font-size: 24px;
-   font-weight: bold;
-   color: #D5FFFF;
+    position: absolute;
+    top: 50%;               /* Center vertically */
+    left: 50%;              /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    z-index: 100;
+    font-size: 5vw;         /* Adjust font size to be responsive to screen size */
+    font-weight: bold;
+    text-align: center;
+    color: #D5FFFF;         /* Light text color */
+    line-height: 1.2;       /* Adjust line height for better text spacing */
  }
+ 
