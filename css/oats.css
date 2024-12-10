@@ -36,6 +36,12 @@
    left: calc(50% - 50px);  /* 1/2 width of wrapper  - 1/2 width of heart */
    width: 640px;            /* Increased width */
    height: 576px;           /* Increased height */
+   animation: beat 1s infinite;
+}
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
  .heart:before,
  .heart:after {

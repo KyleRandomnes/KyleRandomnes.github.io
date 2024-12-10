@@ -59,7 +59,7 @@
                 console.log('The heart is filled!');
                 // Perform actions when the heart is filled
                 // Example: Change background color or trigger animation
-                heart.style.backgroundColor = 'pink'; // Just an example action
+                heart.style.backgroundColor = 'green'; // Just an example action
             } else {
                 console.log('The heart is not filled.');
                 // Perform actions when the heart is not filled
@@ -68,7 +68,7 @@
         }
     </script>
         <div id="wrapper">
-            <div class="heart" onclick="toggleFill(this, 'filled')">
+            <div class="heart" onclick="toggleFill(this, 'filled'); checkHeartStatus();">
               <div class="heart-text unselectable">
                 Happy birthday<p>Oats</p>
               </div>
