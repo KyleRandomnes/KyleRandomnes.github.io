@@ -14,6 +14,7 @@
             })
             .catch(error => console.error('Error loading header:', error));
     </script>
+
     <script>
         function toggleFill(heart, className) {  
             if (!hasClass(heart, className)) {
@@ -49,6 +50,22 @@
                          '( |$)', 'gi').test(el.className);
             }
           }
+
+          function checkHeartStatus() {
+            const heart = document.querySelector('.heart');
+            
+            // Check if the heart is filled
+            if (hasClass(heart, 'filled')) {
+                console.log('The heart is filled!');
+                // Perform actions when the heart is filled
+                // Example: Change background color or trigger animation
+                heart.style.backgroundColor = 'pink'; // Just an example action
+            } else {
+                console.log('The heart is not filled.');
+                // Perform actions when the heart is not filled
+                heart.style.backgroundColor = 'white'; // Reset background color
+            }
+        }
     </script>
         <div id="wrapper">
             <div class="heart" onclick="toggleFill(this, 'filled')">
@@ -57,5 +74,9 @@
               </div>
             </div>
         </div>
+
+        <script>
+            const heart = document.querySelector(".heart");
+        </script>
 </body>
 </html>
