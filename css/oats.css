@@ -23,7 +23,7 @@
    background: red !important;
  }
 #wrapper {
-  background: #fff;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,13 +84,12 @@
  .heart-text {
     position: absolute;
     top: 50%;               /* Center vertically */
-    left: 50%;              /* Center horizontally */
+    left: 11%;              /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for perfect centering */
     z-index: 100;
-    font-size: 5vw;         /* Adjust font size to be responsive to screen size */
+    font-size: 3vw;         /* Adjust font size to be responsive to screen size */
     font-weight: bold;
     text-align: center;
     color: #D5FFFF;         /* Light text color */
     line-height: 1.2;       /* Adjust line height for better text spacing */
  }
- 
