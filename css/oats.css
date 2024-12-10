@@ -23,27 +23,50 @@
    background: red !important;
  }
 #wrapper {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
   background: #000;
-  display: flex;
+    opacity: 1.0;
+  transform: scale(2.0);
+    display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10vh;  /* Push it down by half of the viewport height */
+    background: 
+        linear-gradient(45deg, #00b3b3, #006666, #66cccc, #3399cc), /* Blue marble gradient */
+        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.6), transparent 70%), /* Random gold streak 1 */
+        radial-gradient(circle at 70% 60%, rgba(255, 223, 50, 0.6), transparent 80%); /* Random gold streak 2 */
+    background-blend-mode: screen; /* Makes the layers blend seamlessly */  animation: marbleEffect 8s ease infinite; /* Apply animation for the effect */
+
+}
+@keyframes marbleEffect {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 .heart {
+transform: scale(0.5);
    position: relative;
-   top: calc(50% - 45px);   /* 1/2 height of wrapper - 1/2 height of heart */
-   left: calc(50% - 50px);  /* 1/2 width of wrapper  - 1/2 width of heart */
+top: 1%;
+   left: calc(50% - 550px);  /* 1/2 width of wrapper  - 1/2 width of heart */
    width: 640px;            /* Increased width */
    height: 576px;           /* Increased height */
 }
-.heart.filled {
-    animation: beat 1s infinite;
+.heart.filled
+{
+transform: scale(0.5);
+      animation: beat 1s infinite;
 }
 @keyframes beat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% { transform: scale(0.5); }
+    50% { transform: scale(0.55); }
+    100% { transform: scale(0.5); }
 }
  .heart:before,
  .heart:after {
