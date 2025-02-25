@@ -19,7 +19,69 @@
 <h1>This is what I made for my University</h1>
 
 <div class="scroll">
+    <script>
+        const projects = [
+            {
+                title: "Ternion Game Development",
+                link: "uniProjects/ternion.html",
+                description: "This was my second Game Development assignment...",
+                video: "images/uniProjects/gameDev/Ternion.mp4"
+            },
+            {
+                title: "State Machines Game Development",
+                link: "ownProjects.html",
+                description: "This was my first assignment in game development...",
+                video: "images/uniProjects/gameDev/StateMachines.mp4"
+            },
+            {
+                title: "Helicopter Graphics Programming",
+                link: "ownProjects.html",
+                description: "This was my second experience using FreeGLUT libraries...",
+                video: "images/uniProjects/Graphics/3d_Helicopter.mp4"
+            },
+            {
+                title: "Snowman Graphics Programming",
+                link: "ownProjects.html",
+                description: "This was my first experience using FreeGLUT libraries...",
+                video: "images/uniProjects/Graphics/snowman.mp4"
+            },
+            {
+                title: "Unity Fishing Chronicles Standard Development Practices",
+                link: "ownProjects.html",
+                description: "This was my first Unity project...",
+                image: "images/uniProjects/Other/fishingGame.png"
+            }
+        ];
+    
+        function generateProjects() {
+            let container = document.querySelector('.scroll');
+            projects.forEach(project => {
+                let projectHTML = `
+                    <p class="input-space">${project.title}</p>
+                    <a href="${project.link}" class="project-link">
+                        <div class="project">
+                            <div class="project-text">
+                                <p>${project.description}</p>
+                            </div>
+                            <div class="project-img">
+                                ${project.video 
+                                    ? `<video autoplay loop muted playsinline>
+                                        <source src="${project.video}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                       </video>`
+                                    : `<img src="${project.image}" alt="${project.title}" />`}
+                            </div>
+                        </div>
+                    </a>
+                `;
+                container.innerHTML += projectHTML;
+            });
+        }
+    
+        document.addEventListener("DOMContentLoaded", generateProjects);
+    </script>
 <!-- Copy this to all projects basically -->
+<!--
 <div class="project non-clickable">
     <div class="project-text">
         <p>
@@ -142,7 +204,7 @@
 </div>
 </a>
 </div>
-
+-->
 <!-- Links to other sites -->
 <div id="navbar"></div>
 <script>
