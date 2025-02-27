@@ -64,6 +64,14 @@
                 // Example: Change background color or trigger animation
             }
         }
+        <svg>
+          <defs>
+              <filter id="wave">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="5" />
+                  <feDisplacementMap in="SourceGraphic" scale="30" />
+              </filter>
+          </defs>
+      </svg>
     </script>
         <div id="wrapper">
             <div class="heart" onclick="toggleFill(this, 'filled'); checkHeartStatus();">
