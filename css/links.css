@@ -34,3 +34,21 @@ a:active {
 .project-link:active {
     color: green;
 }
+
+/* Remove text underline, inherit text color */
+.download {
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+}
+.download:hover {
+    text-decoration: none !important;
+    color: inherit;
+}
+.download:visited {
+    color: green;
+}
+
+.download:active {
+    color: green;
+}
