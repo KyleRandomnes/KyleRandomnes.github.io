@@ -39,38 +39,17 @@
     background-blend-mode: screen; /* Makes the layers blend seamlessly */  animation: marbleEffect 8s ease infinite; /* Apply animation for the effect */
 
 }
-.rock-texture {
-  width: 500px;
-  height: 500px;
-  background: 
-      repeating-linear-gradient(
-          -45deg,
-          #4c4c4c 0px,
-          #5a5a5a 10px,
-          #3d3d3d 20px,
-          #707070 30px
-      );
-  filter: blur(2px);
-  transform: skew(-10deg, 5deg);
-  position: relative;
+@keyframes marbleEffect {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-
-/* Adding a Wavy Effect with SVG Filters */
-.rock-texture::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  filter: url(#wave);
-  opacity: 0.8;
-}
-
-/* SVG Filter */
-svg {
-  width: 0;
-  height: 0;
-}
-
 .heart {
 transform: scale(0.5);
    position: relative;
