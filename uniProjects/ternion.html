@@ -17,7 +17,6 @@
 </script>
 
 <h1>Ternion</h1>
-
 <p class="input-space">Overview</p>
 <div class="project non-clickable">
     <div class="project-text">
@@ -41,6 +40,60 @@
     </div>
 </div>
 
+<script>
+    const projects = [
+        {
+            title: "Ternion",
+            overview: "Ternion was my final major project from university...",
+            tasks: [
+                {
+                    title: "Box2D & collision",
+                    description: "Rauen was tasked with developing the collision system...",
+                    image: "/images/uniProjects/gameDev/box2D.png"
+                },
+                {
+                    title: "SDL & imGUI",
+                    description: "Karl was responsible for the game's graphics...",
+                    image: "/images/uniProjects/gameDev/box2D.png"
+                },
+            ],
+            docs: "/uniProjects/docs.zip",
+            video: "/images/uniProjects/gameDev/credits.mp4"
+        }
+        // Add more projects here
+    ];
+
+    function generateProjectPage() {
+        let container = document.querySelector('.project-content');
+        projects.forEach(project => {
+            let projectHTML = `
+                <h1>${project.title}</h1>
+                <p>${project.overview}</p>
+                <div class="tasks">
+                    ${project.tasks.map(task => `
+                        <div class="task">
+                            <h2>${task.title}</h2>
+                            <p>${task.description}</p>
+                            <img src="${task.image}" alt="${task.title}" />
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="docs">
+                    <a href="${project.docs}" download>Download Project Docs</a>
+                </div>
+                <div class="video">
+                    <video autoplay loop muted playsinline>
+                        <source src="${project.video}" type="video/mp4">
+                    </video>
+                </div>
+            `;
+            container.innerHTML += projectHTML;
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", generateProjectPage);
+</script>
+<!--
 <h2>Tasks</h2>
 <p class="input-space">Box2D & collision</p>
 <div class="project non-clickable">
@@ -136,7 +189,7 @@
     </p>
     </div>
 </div>
-
+-->
 <!-- Links to other sites -->
 <div id="navbar"></div>
 <script>
