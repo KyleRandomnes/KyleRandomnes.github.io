@@ -16,8 +16,8 @@
         .catch(error => console.error('Error loading header:', error));
 </script>
 
-<h1>Ternion</h1>
 <!--
+<h1>Ternion</h1>
 <p class="input-space">Overview</p>
 <div class="project non-clickable">
     <div class="project-text">
@@ -40,61 +40,7 @@
         <p><img src="\images\uniProjects\gameDev\TernionMenu.png" alt="Ternion Menu" /></p>
     </div>
 </div>
--->
-<script>
-    const projects = [
-        {
-            title: "Ternion",
-            overview: "Ternion was my final major project from university...",
-            tasks: [
-                {
-                    title: "Box2D & collision",
-                    description: "Rauen was tasked with developing the collision system...",
-                    image: "/images/uniProjects/gameDev/box2D.png"
-                },
-                {
-                    title: "SDL & imGUI",
-                    description: "Karl was responsible for the game's graphics...",
-                    image: "/images/uniProjects/gameDev/box2D.png"
-                },
-            ],
-            docs: "/uniProjects/docs.zip",
-            video: "/images/uniProjects/gameDev/credits.mp4"
-        }
-        // Add more projects here
-    ];
 
-    function generateProjectPage() {
-        let container = document.querySelector('.project-content');
-        projects.forEach(project => {
-            let projectHTML = `
-                <h1>${project.title}</h1>
-                <p>${project.overview}</p>
-                <div class="tasks">
-                    ${project.tasks.map(task => `
-                        <div class="task">
-                            <h2>${task.title}</h2>
-                            <p>${task.description}</p>
-                            <img src="${task.image}" alt="${task.title}" />
-                        </div>
-                    `).join('')}
-                </div>
-                <div class="docs">
-                    <a href="${project.docs}" download>Download Project Docs</a>
-                </div>
-                <div class="video">
-                    <video autoplay loop muted playsinline>
-                        <source src="${project.video}" type="video/mp4">
-                    </video>
-                </div>
-            `;
-            container.innerHTML += projectHTML;
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", generateProjectPage);
-</script>
-<!--
 <h2>Tasks</h2>
 <p class="input-space">Box2D & collision</p>
 <div class="project non-clickable">
@@ -191,6 +137,97 @@
     </div>
 </div>
 -->
+<script>
+    const projectData = [
+    {
+        title: 'Ternion',
+        overview: `Ternion was my final major project from university...`,
+        images: ['/images/uniProjects/gameDev/TernionMenu.png'],
+        nonClickable: true,
+    },
+    {
+        title: 'Tasks',
+        subtitle: 'Box2D & collision',
+        description: `Initially, Rauen was tasked with developing the collision system...`,
+        images: ['/images/uniProjects/gameDev/box2D.png'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'SDL & imGUI',
+        description: `Karl was responsible for the game's graphics...`,
+        images: ['/images/uniProjects/gameDev/box2D.png'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'The Docs',
+        description: `These are the docs we made for the project...`,
+        video: '/images/uniProjects/gameDev/credits.mp4',
+        nonClickable: false,
+        link: '/uniProjects/docs.zip',
+    },
+    {
+        subtitle: 'Personal Snippet',
+        description: `This project was rather rushed in a lot of ways...`,
+        video: '/images/uniProjects/gameDev/credits.mp4',
+        nonClickable: true,
+    }
+];
+
+    // Function to create each project section
+    function createProjectSection(data) {
+        let sectionHTML = '';
+
+        // For the title and subtitle (if available)
+        if (data.title) {
+            sectionHTML += `<h1>${data.title}</h1>`;
+        }
+        if (data.subtitle) {
+            sectionHTML += `<h2>${data.subtitle}</h2>`;
+        }
+
+        // For the description
+        sectionHTML += `<p class="input-space">${data.description}</p>`;
+
+        // Determine if the project is clickable or not
+        if (data.nonClickable) {
+            sectionHTML += `<div class="project non-clickable">`;
+        } else {
+            sectionHTML += `<div class="project" onclick="window.location.href='${data.link}';">`;
+        }
+
+        // Project Text
+        sectionHTML += `<div class="project-text"><p>${data.description}</p></div>`;
+
+        // Image or Video
+        if (data.video) {
+            sectionHTML += `<div class="project-img">
+                <video autoplay loop muted playsinline>
+                    <source src="${data.video}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>`;
+        } else {
+            sectionHTML += `<div class="project-img"><p><img src="${data.images[0]}" alt="${data.subtitle}" /></p></div>`;
+        }
+
+        sectionHTML += `</div>`;
+        return sectionHTML;
+    }
+
+    // Function to render all project data to the page
+    function renderProjects() {
+        const container = document.querySelector('.scroll');  // Make sure the container exists
+        projectData.forEach(data => {
+            container.innerHTML += createProjectSection(data);
+        });
+    }
+
+    // Call the renderProjects function when the page loads
+    window.onload = renderProjects;
+
+</script>
+
+<div class="scroll"></div>
 <!-- Links to other sites -->
 <div id="navbar"></div>
 <script>
