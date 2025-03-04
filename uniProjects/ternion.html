@@ -173,57 +173,54 @@
     }
 ];
 
-    // Function to create each project section
-    function createProjectSection(data) {
-        let sectionHTML = '';
+// Function to create each project section
+function createProjectSection(data) {
+    let sectionHTML = '';
 
-        // For the title and subtitle (if available)
-        if (data.title) {
-            sectionHTML += `<h1>${data.title}</h1>`;
-        }
-        if (data.subtitle) {
-            sectionHTML += `<h2>${data.subtitle}</h2>`;
-        }
-
-        // For the description
-        sectionHTML += `<p class="input-space">${data.description}</p>`;
-
-        // Determine if the project is clickable or not
-        if (data.nonClickable) {
-            sectionHTML += `<div class="project non-clickable">`;
-        } else {
-            sectionHTML += `<div class="project" onclick="window.location.href='${data.link}';">`;
-        }
-
-        // Project Text
-        sectionHTML += `<div class="project-text"><p>${data.description}</p></div>`;
-
-        // Image or Video
-        if (data.video) {
-            sectionHTML += `<div class="project-img">
-                <video autoplay loop muted playsinline>
-                    <source src="${data.video}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>`;
-        } else {
-            sectionHTML += `<div class="project-img"><p><img src="${data.images[0]}" alt="${data.subtitle}" /></p></div>`;
-        }
-
-        sectionHTML += `</div>`;
-        return sectionHTML;
+    // For the title and subtitle (if available)
+    if (data.title) {
+        sectionHTML += `<h1>${data.title}</h1>`;
+    }
+    if (data.subtitle) {
+        sectionHTML += `<h2>${data.subtitle}</h2>`;
     }
 
-    // Function to render all project data to the page
-    function renderProjects() {
-        const container = document.querySelector('.scroll');  // Make sure the container exists
-        projectData.forEach(data => {
-            container.innerHTML += createProjectSection(data);
-        });
+    // Determine if the project is clickable or not
+    if (data.nonClickable) {
+        sectionHTML += `<div class="project non-clickable">`;
+    } else {
+        sectionHTML += `<div class="project" onclick="window.location.href='${data.link}';">`;
     }
 
-    // Call the renderProjects function when the page loads
-    window.onload = renderProjects;
+    // Project Text
+    sectionHTML += `<div class="project-text"><p>${data.description}</p></div>`;
+
+    // Image or Video
+    if (data.video) {
+        sectionHTML += `<div class="project-img">
+            <video autoplay loop muted playsinline>
+                <source src="${data.video}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>`;
+    } else {
+        sectionHTML += `<div class="project-img"><p><img src="${data.images[0]}" alt="${data.subtitle}" /></p></div>`;
+    }
+
+    sectionHTML += `</div>`;
+    return sectionHTML;
+}
+
+// Function to render all project data to the page
+function renderProjects() {
+    const container = document.querySelector('.scroll');  // Make sure the container exists
+    projectData.forEach(data => {
+        container.innerHTML += createProjectSection(data);
+    });
+}
+
+// Call the renderProjects function when the page loads
+window.onload = renderProjects;
 
 </script>
 
