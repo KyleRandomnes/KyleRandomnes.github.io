@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- JavaScript will load the header content here -->
+<link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<script>
+    fetch('/header/header.html')//I cannot believe how long this took me
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('head').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+
+<script>
+    const projectData = [
+    {
+        title: 'State Machines',
+        description: `<p>This project was my first major assignment in my Game 
+                Development class, focusing on learning a game framework and following 
+                a structured development cycle. Developed solo, the project presented 
+                several challenges, particularly in adapting to the framework\’s 
+                limitations and requirements.<\p>
+                
+                <p>At the time, I was also studying finite state machines in another 
+                course and found the problem-solving aspect particularly engaging. 
+                Inspired by this, I designed a 2D game, dedicating significant time 
+                to pre-production—sketching levels, refining mechanics, and 
+                ensuring a clear development roadmap before programming began.<\p>
+                
+                <p>Once implementation started, the most significant challenge 
+                emerged: managing the extensive number of button inputs required for 
+                gameplay. Despite these technical hurdles, the project was 
+                successfully completed, earning an A-.<\p>
+                
+                <p>I see strong potential for this game as a mobile title and plan 
+                to further develop it in a dedicated game engine. While the final 
+                version within the class constraints is not as polished as I would 
+                like, the four-week development cycle provided valuable experience 
+                in both game design and technical problem-solving.<\p>`,
+        images: ['/images/uniProjects/gameDev/statemachinesMenu.png'],
+        nonClickable: true,
+    },
+    {
+        title: 'Tasks',
+        subtitle: '',
+        description: ``,
+        images: ['/images/uniProjects/gameDev/box2D.png'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'SDL & imGUI',
+        description: ``,
+        images: ['/images/uniProjects/gameDev/StateMachines.mp4'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'The Docs',
+        description: `These are the docs I made for the project. These were 
+        created as a way to showcase the project. I decided to use the readme 
+        as a tutorial as I didn't get the chance to create the tutorial in game`,
+        video: '/images/uniProjects/gameDev/statemachinesLevel.png',
+        nonClickable: false,
+        link: '/uniProjects/docs2.zip',
+    },
+    {
+        subtitle: 'Personal Snippet',
+        description: ``,
+        video: '/images/uniProjects/gameDev/credits.mp4',
+        nonClickable: true,
+    }
+];
+
+// Function to create each project section
+function createProjectSection(data) {
+    let sectionHTML = '';
+
+    // For the title and subtitle (if available)
+    if (data.title) {
+        sectionHTML += `<h1>${data.title}</h1>`;
+    }
+    if (data.subtitle) {
+        sectionHTML += `<p class="input-space">${data.subtitle}</p>`;
+    }
+
+    // Determine if the project is clickable or not
+    if (data.nonClickable) {
+        sectionHTML += `<div class="project non-clickable">`;
+    } else {
+        sectionHTML += `<div class="project" onclick="window.location.href='${data.link}';">`;
+    }
+
+    // Project Text
+    sectionHTML += `<div class="project-text"><p>${data.description}</p></div>`;
+
+    // Image or Video
+    if (data.video) {
+        sectionHTML += `<div class="project-img">
+            <video autoplay loop muted playsinline>
+                <source src="${data.video}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>`;
+    } else {
+        sectionHTML += `<div class="project-img"><p><img src="${data.images[0]}" alt="${data.subtitle}" /></p></div>`;
+    }
+
+    sectionHTML += `</div>`;
+    return sectionHTML;
+}
+
+// Function to render all project data to the page
+function renderProjects() {
+    const container = document.querySelector('.scroll');  // Make sure the container exists
+    projectData.forEach(data => {
+        container.innerHTML += createProjectSection(data);
+    });
+}
+
+// Call the renderProjects function when the page loads
+window.onload = renderProjects;
+
+</script>
+
+<div class="scroll"></div>
+<!-- Links to other sites -->
+<div id="navbar"></div>
+<script>
+    // Load the external navigation bar
+    fetch('/functions/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+
+            // Check if there’s a history to go back to AFTER loading the navbar
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        })
+        .catch(error => console.error('Error loading navigation bar:', error));
+</script>
+<!-- Load the external hotkeys script from the functions folder -->
+<script src="\functions\hotkeys.js"></script>
+</body>
+
+</html>
