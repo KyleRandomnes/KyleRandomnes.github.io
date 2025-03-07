@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- JavaScript will load the header content here -->
+<link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<script>
+    fetch('/header/header.html')//I cannot believe how long this took me
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('head').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+
+<script>
+    const projectData = [
+    {
+        title: 'Flying Drone',
+        description: ``,
+//        images: ['/images/uniProjects/gameDev/statemachinesMenu.png'],
+        nonClickable: true,
+    },
+    {
+        title: 'Tasks',
+        subtitle: 'Design',
+        description: ``,
+//        images: ['/images/uniProjects/gameDev/statemachinesflowchart.png'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'The Docs',
+        description: `We were told to keep an up to date log of our progress and 
+        track how much work we've done each time. This was to help us keep a 
+        messaure of what we were doing.`,
+        images: ['/images/uniProjects/gameDev/Log 2~Graphics.pdf'],
+        nonClickable: false,
+        link: '/uniProjects/docs2.zip',
+    },
+    {
+        subtitle: 'Personal Snippet',
+        description: ``,
+        images: ['/images/uniProjects/gameDev/statemachinesMenu.png'],
+        nonClickable: true,
+    }
+];
+
+// Function to create each project section
+function createProjectSection(data) {
+    let sectionHTML = '';
+
+    // For the title and subtitle (if available)
+    if (data.title) {
+        sectionHTML += `<h1>${data.title}</h1>`;
+    }
+    if (data.subtitle) {
+        sectionHTML += `<p class="input-space">${data.subtitle}</p>`;
+    }
+
+    // Determine if the project is clickable or not
+    if (data.nonClickable) {
+        sectionHTML += `<div class="project non-clickable">`;
+    } else {
+        sectionHTML += `<div class="project" onclick="window.location.href='${data.link}';">`;
+    }
+
+    // Project Text
+    sectionHTML += `<div class="project-text"><p>${data.description}</p></div>`;
+
+    // Image or Video
+    if (data.video) {
+        sectionHTML += `<div class="project-img">
+            <video autoplay loop muted playsinline>
+                <source src="${data.video}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>`;
+    } else {
+        sectionHTML += `<div class="project-img"><p><img src="${data.images[0]}" alt="${data.subtitle}" /></p></div>`;
+    }
+
+    sectionHTML += `</div>`;
+    return sectionHTML;
+}
+
+// Function to render all project data to the page
+function renderProjects() {
+    const container = document.querySelector('.scroll');  // Make sure the container exists
+    projectData.forEach(data => {
+        container.innerHTML += createProjectSection(data);
+    });
+}
+
+// Call the renderProjects function when the page loads
+window.onload = renderProjects;
+
+</script>
+
+<div class="scroll"></div>
+<!-- Links to other sites -->
+<div id="navbar"></div>
+<script>
+    // Load the external navigation bar
+    fetch('/functions/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+
+            // Check if there’s a history to go back to AFTER loading the navbar
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        })
+        .catch(error => console.error('Error loading navigation bar:', error));
+</script>
+<!-- Load the external hotkeys script from the functions folder -->
+<script src="\functions\hotkeys.js"></script>
+</body>
+
+</html>
