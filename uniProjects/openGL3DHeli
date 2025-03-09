@@ -20,15 +20,34 @@
     const projectData = [
     {
         title: 'Flying Drone',
-        description: ``,
-//        images: ['/images/uniProjects/gameDev/statemachinesMenu.png'],
+        description: `<p>This project was completed for my Computer Graphics 
+            Programming course. It began with a basic OpenGL framework and 
+            required us to create a helicopter. However, I requested permission 
+            to design a drone instead, and once approved, the project became 
+            particularly exciting.<\p>
+
+            <p>Unfortunately, due to the demands of my Game Development project, 
+            I was unable to dedicate as much time and attention to this program as 
+            I would have liked. Despite this, it provided valuable experience in 
+            working with OpenGL and real-time rendering techniques.<\p>`,
+        video: '/images/uniProjects/Graphics/3d_Helicopter.png',
         nonClickable: true,
     },
     {
         title: 'Tasks',
         subtitle: 'Design',
-        description: ``,
-//        images: ['/images/uniProjects/gameDev/statemachinesflowchart.png'],
+        description: `<p>I had been watching drone videos around the time this 
+        project was assigned, which inspired me to create a drone instead 
+        of a helicopter. This decision allowed me to experiment with a greater 
+        variety of components compared to my peers, ultimately leading to a 
+        successful outcome.<\p>
+
+        <p>Designing the drone required developing creative patterns to make the 
+        wings function properly while ensuring the code remained as memory-efficient 
+        as possible. Additionally, I had to solve challenges related to rendering 
+        the ground and implementing the skybox. Once these elements were in place, 
+        the project came together seamlessly.<\p>`,
+        images: ['/images/uniProjects/Graphics/GraphicDrone.png'],
         nonClickable: true,
     },
     {
@@ -42,8 +61,17 @@
     },
     {
         subtitle: 'Personal Snippet',
-        description: ``,
-        images: ['/images/uniProjects/gameDev/statemachinesMenu.png'],
+        description: `<p>This project was one of the most enjoyable of the semester, 
+        as it felt less pressured compared to my other coursework. Had I taken 
+        this subject earlier, I likely would have dedicated more time to exploring 
+        unique and creative ideas. Despite its smaller scope, I was able to 
+        achieve an A overall for the project.<\p>
+
+        <p>While I enjoyed working on it, I don\’t anticipate revisiting this 
+        project in the future. It provided a refreshing break from more demanding 
+        subjects, but ultimately, it wasn\’t as complex as I typically prefer my 
+        projects to be.<\p>`,
+        images: ['/images/uniProjects/Graphics/GraphicTurbine.png'],
         nonClickable: true,
     }
 ];
