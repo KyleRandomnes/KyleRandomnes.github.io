@@ -5,7 +5,7 @@ function createProjectSection(data) {
         sectionHTML += `<h1>${data.title}</h1>`;
     }
     if (data.subtitle) {
-        sectionHTML += `<h2>${data.subtitle}</h2>`;
+        sectionHTML += `<p class="input-space">${data.subtitle}</p>`;
     }
 
     if (data.nonClickable) {
