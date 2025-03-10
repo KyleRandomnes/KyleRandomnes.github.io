@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- JavaScript will load the header content here -->
+<link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<script>
+    fetch('/header/header.html')//I cannot believe how long this took me
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('head').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+
+<!-- Calling Function to render projectData -->
+<script src="/functions/projects.js"></script>
+
+<script>
+    const projectData = [
+    {
+        title: 'Fishing Chronicles',
+        description: `<p>This project was the first to require comprehensive 
+            documentation, which involved a significant learning curve. Throughout 
+            the process, our understanding of Git improved considerably. The 
+            primary objective of this course was to gain hands-on experience with 
+            Agile methodologies and sprint-based development.</p>
+
+            <p>To achieve this, we formed a team of four and assigned leadership 
+            roles. I was selected as the Project Owner, my teammate Brooklyn took 
+            on the role of Scrum Master, and the remaining two team members served 
+            as developers.</p>`,
+        images: ['/images/uniProjects/Graphics/eclipse.png'],
+        nonClickable: true,
+    },
+    {
+        title: 'Tasks ~ Sprint 1',
+        subtitle: 'Trello',
+        description: `<p>The project began with the first sprint, which lasted four 
+            weeks. We started by forming teams and setting up a Trello board, where 
+            we assigned and rated tasks based on their perceived difficulty. Each 
+            team member was required to take on a minimum of two tasks for the 
+            first sprint.</p>
+
+            <p>This initial sprint presented several challenges, ultimately leading 
+            to a full reset midway through due to misconfigured Git settings. 
+            Initially, only one team member could push changes to the repository, 
+            which significantly hindered progress. Once this issue was resolved, 
+            we were able to move forward. However, based on our team\’s definition 
+            of "done," we had only completed three tasks by the end of the sprint. 
+            This experience provided valuable insight into how we could better 
+            manage our sprints moving forward.</p>
+
+            <p>The three completed tasks included a day-night cycle, implemented 
+            by Brooklyn, terrain generation by Echo, and sound integration, also 
+            completed by Echo.</p>`,
+        images: ['/images/uniProjects/Graphics/night.png'],
+        nonClickable: true,
+    },
+    {
+        Title: `Tasks ~ Sprint 2`,
+        subtitle: 'Features',
+        description: `<p>After Sprint 1, our team had a clear understanding of the 
+            work ahead of us. We had discussed and adjusted our definition of 
+            "done" to improve our efficiency in this next phase. We quickly 
+            assigned two tasks to each member, with my brother, Rauen, previously 
+            assigned to work on controls, which I then took over.</p>
+
+            <p>The initial task assignments were as follows:</p>
+            <ul>
+                <li>Brooklyn: Build an inventory system and a 
+                    shopping/selling system.</li>
+                <li>Echo: Implement working NPCs and create item art.</li>
+                <li>Kyle: Implement scene transitions and get the player 
+                    character functioning.</li>
+                <li>Rauen: Implement fishing mechanics and ensure caught fish 
+                    are added to the inventory.</li>
+            </ul>
+            
+            <p>I immediately began working on the player character functionality 
+            so that my team members could continue making progress on their 
+            tasks. I also updated our system to support a more modern controller 
+            version. Next, I focused on enabling scene transitions, which allowed 
+            me to complete my two assigned tasks.</p>
+            
+            <p>With some free time available, I took the initiative to add 
+            additional tasks for myself. These included:</p>
+            <ul>
+                <li>Build a house</li>
+                <li>Add a pause menu</li>
+                <li>Create a menu screen</li>
+                <li>Implement a lighting system</li>
+                <li>Build a dock for the fishing mechanic</li>
+                <li>Add a settings button</li>
+            </ul>
+            <p>I only added these tasks to my list after completing them, 
+            ensuring each was fully implemented.</p>
+            
+            <p>Meanwhile, Brooklyn, Rauen, and Echo made significant progress on 
+            their tasks. Rauen also worked on implementing health points (HP), a 
+            hotbar, and a leveling system. By the end of the sprint, our game felt 
+            much more complete and functional, especially when compared to the 
+            challenges of Sprint 1.</p>            `,
+        images: ['/images/uniProjects/Graphics/night.png'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'The Docs',
+        description: `These docs counted for most of the grades we gained through 
+        the course, so there is a lot of them, but they were all quite useful for 
+        knowledge on how to actually handle a sprint and SCRUM.`,
+        video: '/images/uniProjects/Graphics/snowman.mp4',
+        nonClickable: false,
+        link: '/uniProjects/Log~Graphics.pdf',
+    },
+    {
+        subtitle: 'Personal Snippet',
+        description: `<p>This project was incredibly enjoyable for me. I have a 
+            deep passion for game development, and this experience gave me 
+            valuable insight into both the excitement and challenges of the 
+            development cycle.</p>
+
+            <p>It was also the first time I had the opportunity to choose my own 
+            team, which made the experience even better. Being able to work 
+            alongside my friends, knowing that each of them would contribute in 
+            their own way, made collaboration smooth and rewarding.</p>`,
+        images: ['/images/uniProjects/Graphics/eclipse.png'],
+        nonClickable: true,
+    }
+];
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderProjects(projectData);
+    });
+</script>
+
+<div class="scroll"></div>
+<!-- Links to other sites -->
+<div id="navbar"></div>
+<script>
+    // Load the external navigation bar
+    fetch('/functions/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+
+            // Check if there’s a history to go back to AFTER loading the navbar
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        })
+        .catch(error => console.error('Error loading navigation bar:', error));
+</script>
+<!-- Load the external hotkeys script from the functions folder -->
+<script src="\functions\hotkeys.js"></script>
+</body>
+
+</html>
