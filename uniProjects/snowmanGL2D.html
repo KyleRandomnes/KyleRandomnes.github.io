@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- JavaScript will load the header content here -->
+<link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<script>
+    fetch('/header/header.html')//I cannot believe how long this took me
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('head').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
+
+<!-- Calling Function to render projectData -->
+<script src="/functions/projects.js"></script>
+
+<script>
+    const projectData = [
+    {
+        title: 'Snowman',
+        description: `This was the first assignment in my Computer Graphics course. 
+        The task was to create a 2D snowman with falling snow, along with two 
+        additional features. However, I ultimately implemented three, as I was not 
+        satisfied with how one of them turned out.`,
+        images: ['/images/uniProjects/Graphics/eclipse.png'],
+        nonClickable: true,
+    },
+    {
+        title: 'Tasks',
+        subtitle: 'Features',
+        description: `<p>After completing the main tasks, I focused on adding extra 
+            features, starting with the snow interaction. I implemented snow that 
+            would fall and hit the ground, then gradually melt upon contact. 
+            Additionally, I added randomly placed grass along the floor and created 
+            an animation effect to simulate wind blowing through it. To achieve 
+            this, I first sorted the array of grass based on its location and then 
+            applied the animation effect.</p>
+
+            <p>The next feature I worked on was a day-night cycle, which required 
+            the sun to move across the sky. Following that, I added a moon that 
+            would also traverse the sky. When the paths of the moon and sun 
+            intersected, the moon would "eclipse" the sun, creating a special visual 
+            effect.</p>
+
+            <p>The final feature I implemented was the snowman\’s ability to talk. 
+            When the user pressed the 't' key, the snowman would display a series 
+            of text messages, starting with a greeting. This added a layer of 
+            interactivity and made the snowman feel more alive.</p>`,
+        images: ['/images/uniProjects/Graphics/night.png'],
+        nonClickable: true,
+    },
+    {
+        subtitle: 'The Docs',
+        description: `This project required us to maintain a logbook to track our 
+        tasks and daily progress. As a result, I kept detailed notes on each task 
+        I completed throughout the project.`,
+        video: '/images/uniProjects/Graphics/snowman.mp4',
+        nonClickable: false,
+        link: '/uniProjects/Log~Graphics.pdf',
+    },
+    {
+        subtitle: 'Personal Snippet',
+        description: `<p>This project was a good introduction to glut, it felt 
+            easy to use and also allowed me to try other ideas out, which was 
+            good relief from other subjects.</p>
+            
+            <p>The sad part for this project was not being able to get the grass 
+            to generate along the floor as I wanted to because for some reason 
+            the computer did averages differently and resulted in steeper 
+            curves for the grass than it did for the ground. This meant the 
+            grass was stuck at the bottom, along with the snow</p>`,
+        images: ['/images/uniProjects/Graphics/eclipse.png'],
+        nonClickable: true,
+    }
+];
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderProjects(projectData);
+    });
+</script>
+
+<div class="scroll"></div>
+<!-- Links to other sites -->
+<div id="navbar"></div>
+<script>
+    // Load the external navigation bar
+    fetch('/functions/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+
+            // Check if there’s a history to go back to AFTER loading the navbar
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        })
+        .catch(error => console.error('Error loading navigation bar:', error));
+</script>
+<!-- Load the external hotkeys script from the functions folder -->
+<script src="\functions\hotkeys.js"></script>
+</body>
+
+</html>
