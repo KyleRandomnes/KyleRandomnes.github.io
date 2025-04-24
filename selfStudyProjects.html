@@ -6,58 +6,127 @@
     <link rel="icon" href="images\generic\favicon.ico" type="image/x-icon">
 </head>
 
-<body>
-    <script>
-        fetch('https://kylerandomnes.github.io/header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('head').innerHTML += data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-    <h1></h1>
-    <script src="/functions/projects.js"></script>
+<script>
+    fetch('https://kylerandomnes.github.io/header/header.html')
+    .then(response => response.text())
+        .then(data => {
+            document.querySelector('head').innerHTML += data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+</script>
 
-    <script>
-        const projects = [
-        {
-            title: "Here's what I'm learning on my own",
-            description: `These are the courses, short tests, and other major items 
-            I have completed, not as main projects but rather to develop my skills 
-            as a coder beyond what was taught in university. These projects range 
-            from certificates to medium-sized projects.`,
-//            images: ["/images/uniProjects/generic/AUT-Logo-1.png"],
-            nonClickable: true
-        },
-    ];
-    </script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderProjects(projects);
-        });
-    </script>
-    
-    <div class="scroll">
-    <!-- Links to other sites -->
-    <div id="navbar"></div>
-    <script>
-        // Load the external navigation bar
-        fetch('functions/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-    
-                // Check if there’s a history to go back to AFTER loading the navbar
-                if (window.history.length > 1) {
-                    // Show the Back button
-                    document.getElementById('backButton').style.display = 'inline';
-                }
-            })
-            .catch(error => console.error('Error loading navigation bar:', error));
-    </script>
+<!-- Calling Function to render projectData -->
+<script src="/functions/projects.js"></script>
+
+<script>
+    const projects = [
+    {
+        title: "This is what I made for my University",
+        description: `I graduated with a BSc in Computer Science at AUT, 
+        and graduated in December 2024. Below are a few selected 
+        projects that I\’m particularly proud of.`,
+        images: ["/images/uniProjects/generic/AUT-Logo-1.png"],
+        nonClickable: true
+    },
+    {
+        subtitle: "My transcripts",
+        description: 'These are my transcripts for my overall degreree',
+        images: ["/images/uniProjects/generic/AUT-Logo-1.png"],
+        nonClickable: false,
+        link: '/uniProjects/Transcript.pdf',
+    },
+    {
+        subtitle: "Ternion",
+        description: `This was my second Game Development assignment. Unlike the 
+        first, this was a group project, where 4 members either created a new 
+        game or worked on an existing one. As a group, we decided to work on an 
+        existing game, Ternion, a 2D side-scroller RPG. We worked with animated 
+        sprites, Box2D, and a sound mixer to create the best version of the game we 
+        could within the time limit. Overall, we successfully met our goals and 
+        delivered the product on time.`,
+        video: "/images/uniProjects/gameDev/Ternion.mp4",
+        nonClickable: false,
+        link: "/uniProjects/ternion.html"
+    },
+    {
+        subtitle: "State Machines",
+        description: `This was my first assignment in game development, where I 
+        learnt C++ and worked with a simple game engine framework. I drew 
+        inspiration from a class on Finite State Machines (FSMs) and applied those 
+        concepts to create a puzzle-solving game. This project was a significant 
+        learning experience, bridging concepts from both subjects. It has been one 
+        of the most challenging projects I\’ve programmed so far.`,
+        video: "/images/uniProjects/gameDev/StateMachines.mp4",
+        nonClickable: false,
+        link: "/uniProjects/stateMachines.html"
+    },
+    {
+        subtitle: "Flying Drone",
+        description: `This was my second experience using FreeGLUT libraries, where 
+        I learnt to create a 3D scene. I was tasked with creating a helicopter that 
+        could fly around the scene. I decided to make mine a drone instead, which 
+        required creative problem-solving to manage function calls within a loop 
+        and adjust the drawing point of objects. Once the drone was built, I 
+        focused on building additional objects around the scene and ended up adding 
+        some wind turbines.`,
+        video: "/images/uniProjects/Graphics/3d_Helicopter.mp4",
+        nonClickable: false,
+        link: "/uniProjects/openGL3DHeli.html"
+    },
+    {
+        subtitle: "Snowman",
+        description: `This was my first experience using FreeGLUT libraries, where 
+        I learned to create a 2D scene. I was tasked with developing two unique 
+        features but decided to implement three. I added a dynamic sun and moon 
+        that move across the sky, simulating a day-night cycle, as well as 
+        animated grass that 'blows' in the wind at the bottom. Finally, pressing 
+        the 'T' key triggers the snowman to talk.`,
+        video: "/images/uniProjects/Graphics/snowman.mp4",
+        nonClickable: false,
+        link: "/uniProjects/snowmanGL2D.html"
+    },
+    {
+        subtitle: "Fishing Chronicles",
+        description: `This was my first Unity project, developed in collaboration 
+        with a team of four, including myself and three friends. We worked on this 
+        project while learning about SCRUM and sprint management. My primary 
+        contributions were implementing the camera and character movement, as 
+        well as serving as the project owner.`,
+        images: ["/images/uniProjects/fishingChronicles/fishingGame.png"],
+        nonClickable: false,
+        link: "/uniProjects/FishingChronicles.html"
+    }
+];
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderProjects(projects);
+    });
+</script>
+
+<div class="scroll">
+
+<!-- Links to other sites -->
+<div id="navbar"></div>
+<script>
+    // Load the external navigation bar
+    fetch('functions/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+
+            // Check if there’s a history to go back to AFTER loading the navbar
+            if (window.history.length > 1) {
+                // Show the Back button
+                document.getElementById('backButton').style.display = 'inline';
+            }
+        })
+        .catch(error => console.error('Error loading navigation bar:', error));
+</script>
 <!-- Load the external hotkeys script from the functions folder -->
 <script src="functions\hotkeys.js"></script>
+
 </body>
 
 </html>
