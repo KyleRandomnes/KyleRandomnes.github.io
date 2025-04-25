@@ -27,18 +27,59 @@
         from certificates to medium-sized projects. The formating of these will be a 
         lot more chaotic than the other slides due to the nature and method in which I 
         am doing these, with mostly live updates.`,
-        images: ["/images/uniProjects/generic/AUT-Logo-1.png"],
+        video: "/images/selfStudy/BallBouncer/ballBounce.mp4",
         nonClickable: true,
     },
     {
-        subtitle: "Bounce the ball",
-        description: `This is a small physics-based platformer being made with a friend I 
-        met at university. He asked me to join with a few tasks in mind and I'll explain this 
-        further if you choose to read this project, and as the development continues to develop.`,
-        video: "/images/selfStudy/BallBouncer/ballBounce.mp4",
+        subtitle: "Version 0.1",
+        description: `This is what I recieved as the basic project, upon taking a look my partner 
+        had placed everything in one class, which worked very well for the smaller scale project. 
+        I realized this would not do for as the project grew and decided to make my first priority to 
+        divide the functions into multiple classes. Jan 20 2025`,
+        images: ["/images/selfStudy/BallBouncer/FirstCodeStruct.png"],
         nonClickable: false,
         link: "/selfstudy/ballGame/ballgameV1.html"
-    }
+    },
+    {
+        subtitle: "Version 0.2",
+        description: `<p>The start of this project was delayed, I knew what I would need to do however I 
+        was preoccupied with creating other projects. After creating the changes from the previous version 
+        I showed my teammate and they approved of the changes finding them to make the code base a lot 
+        easier to work with. It also meant that further iterations would be less complicated and finding 
+        bugs would become a lot simplier.</p>
+        
+        <h2>Further details:</h2>
+        <p>To start the first part I changed was removing controls from the code base and creating a folder 
+        where controls could be placed, splitting it into 2 classes of movement and one for input. This 
+        would mean that if we added more inputs they would only go into one class and then changing how 
+        movement worked for later could be done with minimal issues.</p>
+            
+        <p>The next step I took was removing obstacle spawning and movement from the main codebase into 
+        it's own folder and into 2 classes. This did however result in a bug where after reset obstacles 
+        would immeditly spawn instead of taking the time they took before to spawn. This is a bug I'd have 
+        to solve later, however at the time I placed it on a lower priority than getting the code fully 
+        seperated.</p>
+        
+        <p>The final step was to remove game manager from the system into their own folder and into 
+        3 classes, these classes would be score, time and gameOver. The score was done first and I 
+        figured out quickly that I'd need to remove time for this to be effective as many objects in score 
+        called time. Once I got time sorted as well, both functioned and then I got to work with the game 
+        restart and game over. With all of these working, I had made the code base a lot easier to function 
+        and also decreased the reading complexity of the code</p>
+        
+        <p>I then returned to the bug, which required me to resort how the spawning was working, where I 
+        found the bug was because I failed to reinitalize the obstacle array correctly and remove all 
+        the obstacles that were there before, thus placing you where you were before just having every 
+        obstacle move places. This also then fixed the second issue that sometimes occured where 
+        obstacles would stop moving after all original obstacles were destroyed. Once everything 
+        was sorted the game was in the same state as before I started the project, so players would 
+        not experince the difference but for coding in future these changes would make the game feel a 
+        lot more clean and readable.</p>`,
+        images: ["/images/selfStudy/BallBouncer/SecondCodeStruct.png"],
+        nonClickable: false,
+        link: "/selfstudy/ballGame/ballgameV1.html"
+    },
+
 ];
 </script>
 
@@ -54,7 +95,7 @@
 <div id="navbar"></div>
 <script>
     // Load the external navigation bar
-    fetch('functions/navbar.html')
+    fetch('/functions/navbar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
