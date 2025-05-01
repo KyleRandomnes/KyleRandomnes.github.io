@@ -129,8 +129,8 @@
           for (let x = 0; x < width; x++) {
               for (let y = 0; y < height; y++) {
                   // Use a higher frequency of noise for smoother, extended lines
-                  let noiseVal = noise(x * noiseScale, y * noiseScale); // Perlin noise calculation
-      
+                  let noiseVal = noise(x * noiseScale, y * noiseScale * 0.1);
+                        
                   // Smoother transitions and less "spotty" appearance
                   noiseVal = map(noiseVal, 0, 1, -1, 1); // Map noise to a wider range for smoother effects
       
