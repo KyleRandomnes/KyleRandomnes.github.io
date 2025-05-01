@@ -175,7 +175,7 @@ function drawPixel(x, y, baseNoiseScale) {
     }
   }
 
-  let noiseVal = noise(nx * baseNoiseScale, ny * baseNoiseScale * 0.8);
+  let noiseVal = noise(nx * baseNoiseScale, ny * baseNoiseScale * 0.5);
   noiseVal = map(noiseVal, 0, 1, -1, 1);
 
   let streakBand = sin(atan2(y - height / 2, x - width / 2) * 10 + dist(x, y, width / 2, height / 2) * 0.1) * 0.1;
