@@ -29,6 +29,19 @@
             width: 80px;
             font-size: 16px;
         }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -57,6 +70,9 @@
             <label for="blue">Blue:</label>
             <input type="number" id="blue" value="242" min="0" max="255" />
         </div>
+
+        <!-- Apply Changes Button -->
+        <button id="applyChanges">Apply Changes</button>
     </div>
 
     <script>
@@ -72,26 +88,8 @@
             canvas.style('position', 'fixed');
             noLoop();
 
-            // Set up event listeners for the inputs
-            document.getElementById('noiseScale').addEventListener('input', (e) => {
-                noiseScale = parseFloat(e.target.value);
-                redraw(); // Redraw the background when the noise scale is updated
-            });
-
-            document.getElementById('red').addEventListener('input', (e) => {
-                redVal = parseInt(e.target.value);
-                redraw(); // Redraw the background when the red value is updated
-            });
-
-            document.getElementById('green').addEventListener('input', (e) => {
-                greenVal = parseInt(e.target.value);
-                redraw(); // Redraw the background when the green value is updated
-            });
-
-            document.getElementById('blue').addEventListener('input', (e) => {
-                blueVal = parseInt(e.target.value);
-                redraw(); // Redraw the background when the blue value is updated
-            });
+            // Set up the "Apply Changes" button event listener
+            document.getElementById('applyChanges').addEventListener('click', applyChanges);
         }
 
         function draw() {
@@ -110,6 +108,16 @@
                     point(x, y);
                 }
             }
+        }
+
+        // Function to apply changes from inputs to the noise and colors
+        function applyChanges() {
+            noiseScale = parseFloat(document.getElementById('noiseScale').value);
+            redVal = parseInt(document.getElementById('red').value);
+            greenVal = parseInt(document.getElementById('green').value);
+            blueVal = parseInt(document.getElementById('blue').value);
+
+            redraw(); // Redraw the background with new values
         }
 
         // Make sure canvas resizes on window resize
