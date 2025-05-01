@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <!-- JavaScript will load the header content here -->
-    <link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
+<!-- JavaScript will load the header content here -->
+<link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
 </head>
 
+<body>
 <script>
     fetch('https://kylerandomnes.github.io/header/header.html')
     .then(response => response.text())
@@ -17,42 +18,21 @@
 
 <!-- Calling Function to render projectData -->
 <script src="/functions/projects.js"></script>
+
 <script>
     const projects = [
     {
-        title: "These are projects I've taken up to improve my ability",
-        description: `These are the courses, short tests, and other major items 
-        I have completed, not as main projects but rather to develop my skills 
-        as a coder beyond what was taught in university. These projects range 
-        from certificates to medium-sized projects. The formating of these will be a 
-        lot more chaotic than the other slides due to the nature and method in which I 
-        am doing these, with mostly live updates.`,
-        video: "/images/selfStudy/BallBouncer/ballBounce.mp4",
-        nonClickable: true,
-    },
-    {
-        subtitle: "Bounce the ball",
-        description: `This is a small physics-based platformer being made with a friend I 
-        met at university. He asked me to join with a few tasks in mind and I'll explain this 
-        further if you choose to read this project, and as the development continues to develop. `,
-        video: "/images/selfStudy/BallBouncer/ballBounce.mp4",
-        nonClickable: false,
-        link: "/selfstudy/ballGame/ballgame.html"
-    },
-    {
-        subtitle: "Twitch",
-        description: `I’ve collaborated with several streamers—friends who naturally turned to me for 
-        coding support. Over time, I’ve developed a range of Twitch commands, from simple utilities 
-        to complex custom tools. This section showcases that work and will be updated as I 
-        continue to build and refine more.
+        title: "Twitch commands",
+        description: `Each block here will tell you about the streamer, and at the bottom is misc 
+        which were streamers that I either haven't asked if they want to be on the portfolio or 
+        I don't want known I made commands for.
         <p><strong>Disclaimer: I am not affiliated with or endorsed by Twitch. The Twitch logo is used 
         here solely to represent the platform these tools were built for, in accordance with their 
         brand guidelines.</strong></p>`,
         images: ["/images/selfStudy/streamers/glitch_flat_purple.png"],
         nonClickable: false,
-        link: "/selfstudy/twitch/streamers.html"
+        link: "https://github.com/BlakeJacobi"
     },
-
 ];
 </script>
 

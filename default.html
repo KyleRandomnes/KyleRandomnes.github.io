@@ -3,7 +3,7 @@
 
 <head>
     <!-- JavaScript will load the header content here -->
-    <link rel="icon" href="images\generic\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <div id="navbar"></div>
     <script>
         // Load the external navigation bar
-        fetch('functions/navbar.html')
+        fetch('/functions/navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
@@ -35,7 +35,7 @@
             .catch(error => console.error('Error loading navigation bar:', error));
     </script>
 <!-- Load the external hotkeys script from the functions folder -->
-<script src="functions\hotkeys.js"></script>
+<script src="\functions\hotkeys.js"></script>
     
 </body>
 
