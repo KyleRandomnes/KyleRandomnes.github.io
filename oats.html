@@ -6,7 +6,6 @@
     <title>Granite Background with Noise</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
-        /* Add basic styles */
         body {
             margin: 0;
             padding: 0;
@@ -53,22 +52,56 @@
             <input type="number" id="noiseScale" value="0.02" step="0.01" />
         </div>
 
-        <!-- Red -->
+        <!-- Base Colors -->
         <div class="control">
-            <label for="red">Red:</label>
-            <input type="number" id="red" value="187" min="0" max="255" />
+            <label for="r1Base">Base Red (Low):</label>
+            <input type="number" id="r1Base" value="163" />
+        </div>
+        <div class="control">
+            <label for="r2Base">Base Red (High):</label>
+            <input type="number" id="r2Base" value="187" />
+        </div>
+        <div class="control">
+            <label for="g1Base">Base Green (Low):</label>
+            <input type="number" id="g1Base" value="189" />
+        </div>
+        <div class="control">
+            <label for="g2Base">Base Green (High):</label>
+            <input type="number" id="g2Base" value="200" />
+        </div>
+        <div class="control">
+            <label for="b1Base">Base Blue (Low):</label>
+            <input type="number" id="b1Base" value="226" />
+        </div>
+        <div class="control">
+            <label for="b2Base">Base Blue (High):</label>
+            <input type="number" id="b2Base" value="242" />
         </div>
 
-        <!-- Green -->
+        <!-- Gold Streak Colors -->
         <div class="control">
-            <label for="green">Green:</label>
-            <input type="number" id="green" value="200" min="0" max="255" />
+            <label for="r1Gold">Gold Red (Low):</label>
+            <input type="number" id="r1Gold" value="209" />
         </div>
-
-        <!-- Blue -->
         <div class="control">
-            <label for="blue">Blue:</label>
-            <input type="number" id="blue" value="242" min="0" max="255" />
+            <label for="r2Gold">Gold Red (High):</label>
+            <input type="number" id="r2Gold" value="219" />
+        </div>
+        <div class="control">
+            <label for="g1Gold">Gold Green (Low):</label>
+            <input type="number" id="g1Gold" value="192" />
+        </div>
+        <div class="control">
+            <label for="g2Gold">Gold Green (High):</label>
+            <input type="number" id="g2Gold" value="197" />
+        </div>
+        <div class="control">
+            <label for="b1Gold">Gold Blue (Low):</label>
+            <input type="number" id="b1Gold" value="162" />
+        </div>
+        <div class="control">
+            <label for="b2Gold">Gold Blue (High):</label>
+            <input type="number" id="b2Gold" value="158" />
         </div>
 
         <!-- Apply Changes Button -->
@@ -77,9 +110,8 @@
 
     <script>
         let noiseScale = 0.02;
-        let redVal = 187;
-        let greenVal = 200;
-        let blueVal = 242;
+        let r1Base = 163, r2Base = 187, g1Base = 189, g2Base = 200, b1Base = 226, b2Base = 242;
+        let r1Gold = 209, r2Gold = 219, g1Gold = 192, g2Gold = 197, b1Gold = 162, b2Gold = 158;
 
         function setup() {
             let canvas = createCanvas(windowWidth, windowHeight);
@@ -88,47 +120,55 @@
             canvas.style('position', 'fixed');
             noLoop();
 
-            // Set up the "Apply Changes" button event listener
             document.getElementById('applyChanges').addEventListener('click', applyChanges);
         }
 
         function draw() {
-            background(255); // White background to start with
+            background(255);
 
-            // Loop through each pixel and generate noise
             for (let x = 0; x < width; x++) {
                 for (let y = 0; y < height; y++) {
-                    let noiseVal = noise(x * noiseScale, y * noiseScale); // Perlin noise
+                    let noiseVal = noise(x * noiseScale, y * noiseScale);
                     let col;
-                    if (noiseVal > 0.8) { // Threshold for shocking streaks
-                      // Shocking streaks (bright, vibrant colors)
-                      let red = map(noiseVal, 0.8, 1, 209, 219);
-                      let green = map(noiseVal, 0.8, 1, 192, 197);
-                      let blue = map(noiseVal, 0.8, 1, 162, 158);
-                    } else {
-                      // Granite base colors (smooth transition)
-                      let red = map(noiseVal, 0, 0.8, 187, 163);
-                      let green = map(noiseVal, 0, 0.8, 200, 189);
-                      let blue = map(noiseVal, 0, 0.8, 242, 226);
+
+                    if (noiseVal > 0.8) { // Shocking streaks
+                        let red = map(noiseVal, 0.8, 1, r1Gold, r2Gold);
+                        let green = map(noiseVal, 0.8, 1, g1Gold, g2Gold);
+                        let blue = map(noiseVal, 0.8, 1, b1Gold, b2Gold);
+                        col = color(red, green, blue);
+                    } else { // Base granite colors
+                        let red = map(noiseVal, 0, 0.8, r1Base, r2Base);
+                        let green = map(noiseVal, 0, 0.8, g1Base, g2Base);
+                        let blue = map(noiseVal, 0, 0.8, b1Base, b2Base);
+                        col = color(red, green, blue);
                     }
-                    col = color(red, green, blue);
+
                     stroke(col);
                     point(x, y);
                 }
             }
         }
 
-        // Function to apply changes from inputs to the noise and colors
         function applyChanges() {
+            // Get the values from the text boxes
             noiseScale = parseFloat(document.getElementById('noiseScale').value);
-            redVal = parseInt(document.getElementById('red').value);
-            greenVal = parseInt(document.getElementById('green').value);
-            blueVal = parseInt(document.getElementById('blue').value);
+            r1Base = parseInt(document.getElementById('r1Base').value);
+            r2Base = parseInt(document.getElementById('r2Base').value);
+            g1Base = parseInt(document.getElementById('g1Base').value);
+            g2Base = parseInt(document.getElementById('g2Base').value);
+            b1Base = parseInt(document.getElementById('b1Base').value);
+            b2Base = parseInt(document.getElementById('b2Base').value);
 
-            redraw(); // Redraw the background with new values
+            r1Gold = parseInt(document.getElementById('r1Gold').value);
+            r2Gold = parseInt(document.getElementById('r2Gold').value);
+            g1Gold = parseInt(document.getElementById('g1Gold').value);
+            g2Gold = parseInt(document.getElementById('g2Gold').value);
+            b1Gold = parseInt(document.getElementById('b1Gold').value);
+            b2Gold = parseInt(document.getElementById('b2Gold').value);
+
+            redraw(); // Redraw with updated values
         }
 
-        // Make sure canvas resizes on window resize
         function windowResized() {
             resizeCanvas(windowWidth, windowHeight);
             redraw();
