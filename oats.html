@@ -17,7 +17,7 @@
     </script>
     <script>
       let noiseScale = 0.02;
-    
+      
       function setup() {
         let canvas = createCanvas(windowWidth, windowHeight);
         canvas.position(0, 0);
@@ -30,7 +30,23 @@
         for (let x = 0; x < width; x++) {
           for (let y = 0; y < height; y++) {
             let noiseVal = noise(x * noiseScale, y * noiseScale);
-            let col = color(noiseVal * 80 + 50, noiseVal * 80 + 50, noiseVal * 80 + 50); // grey-ish granite
+    
+            // Determine the color based on the noise value
+            let col;
+            if (noiseVal > 0.8) { // Threshold for shocking streaks
+              // Shocking streaks (bright, vibrant colors)
+              let red = map(noiseVal, 0.8, 1, 209, 219);
+              let green = map(noiseVal, 0.8, 1, 192, 197);
+              let blue = map(noiseVal, 0.8, 1, 162, 158);
+              col = color(red, green, blue);
+            } else {
+              // Granite base colors (smooth transition)
+              let red = map(noiseVal, 0, 0.8, 187, 163);
+              let green = map(noiseVal, 0, 0.8, 200, 189);
+              let blue = map(noiseVal, 0, 0.8, 242, 226);
+              col = color(red, green, blue);
+            }
+    
             stroke(col);
             point(x, y);
           }
@@ -43,6 +59,7 @@
       }
     </script>
     
+
     <script>
         function toggleFill(heart, className) {  
             if (!hasClass(heart, className)) {
