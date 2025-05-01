@@ -99,11 +99,19 @@
             for (let x = 0; x < width; x++) {
                 for (let y = 0; y < height; y++) {
                     let noiseVal = noise(x * noiseScale, y * noiseScale); // Perlin noise
-                    let col = color(
-                        redVal + noiseVal * 80,    // Red color value with noise
-                        greenVal + noiseVal * 80,  // Green color value with noise
-                        blueVal + noiseVal * 80    // Blue color value with noise
-                    );
+                    let col;
+                    if (noiseVal > 0.8) { // Threshold for shocking streaks
+                      // Shocking streaks (bright, vibrant colors)
+                      let red = map(noiseVal, 0.8, 1, 209, 219);
+                      let green = map(noiseVal, 0.8, 1, 192, 197);
+                      let blue = map(noiseVal, 0.8, 1, 162, 158);
+                    } else {
+                      // Granite base colors (smooth transition)
+                      let red = map(noiseVal, 0, 0.8, 187, 163);
+                      let green = map(noiseVal, 0, 0.8, 200, 189);
+                      let blue = map(noiseVal, 0, 0.8, 242, 226);
+                    }
+                    col = color(red, green, blue);
                     stroke(col);
                     point(x, y);
                 }
