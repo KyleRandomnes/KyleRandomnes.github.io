@@ -3,125 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-    <title>Hidden Birthday Heart</title>    
+    <title>Granite Background with Noise</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        /* Add basic styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .control {
+            margin: 5px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            width: 80px;
+            font-size: 16px;
+        }
+    </style>
 </head>
-<body id="homepage">
-    <script>//this now takes in header
-        fetch('https://kylerandomnes.github.io/header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('head').innerHTML += data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+<body>
 
-    <script>
-      let noiseScale = 0.005;
-      
-      function setup() {
-        let canvas = createCanvas(windowWidth, windowHeight);
-        canvas.position(0, 0);
-        canvas.style('z-index', '-1'); // Push canvas behind everything
-        canvas.style('position', 'fixed'); // Stick to background
-        noLoop();
-      }
-    
-      function draw() {
-        for (let x = 0; x < width; x++) {
-          for (let y = 0; y < height; y++) {
-            let noiseVal = noise(x * noiseScale, y * noiseScale);
-    
-            // Determine the color based on the noise value
-            let col;
-            if (noiseVal > 0.8) { // Threshold for shocking streaks
-              // Shocking streaks (bright, vibrant colors)
-              let red = map(noiseVal, 0.8, 1, 209, 219);
-              let green = map(noiseVal, 0.8, 1, 192, 197);
-              let blue = map(noiseVal, 0.8, 1, 162, 158);
-              col = color(red, green, blue);
-            } else {
-              // Granite base colors (smooth transition)
-              let red = map(noiseVal, 0, 0.8, 187, 163);
-              let green = map(noiseVal, 0, 0.8, 200, 189);
-              let blue = map(noiseVal, 0, 0.8, 242, 226);
-              col = color(red, green, blue);
-            }
-    
-            stroke(col);
-            point(x, y);
-          }
-        }
-      }
-    
-      function windowResized() {
-        resizeCanvas(windowWidth, windowHeight);
-        redraw();
-      }
-    </script>
-    
-
-    <script>
-        function toggleFill(heart, className) {  
-            if (!hasClass(heart, className)) {
-              addClass(heart, className);
-            } else {
-              removeClass(heart, className);
-            }
-          }
-          
-          function addClass(el, className) {
-            if (el.classList) {
-              el.classList.add(className);
-            } else {
-              el.className += ' ' + className;
-            }
-          }
-          
-          function removeClass(el, className) {
-            if (el.classList) {
-              el.classList.remove(className);
-            } else {
-              el.className = el.className.replace(
-                new RegExp('(^|\\b)' + className.split(' ').join('|') +
-                           '(\\b|$)', 'gi'), ' ');
-            }
-          }
-          
-          function hasClass(el, className) {
-            if (el.classList) {
-              return el.classList.contains(className);
-            } else {
-              return new RegExp('(^| )' + className +
-                         '( |$)', 'gi').test(el.className);
-            }
-          }
-
-          function checkHeartStatus() {
-            const heart = document.querySelector('.heart');
-            
-            // Check if the heart is filled
-            if (hasClass(heart, 'filled')) {
-                console.log('The heart is filled!');
-                // Perform actions when the heart is filled
-                // Example: Change background color or trigger animation
-            }
-        }
-    </script>
-        <div id="wrapper">
-            <div class="heart" onclick="toggleFill(this, 'filled'); checkHeartStatus();">
-              <div class="heart-text unselectable">
-                Happy birthday<p>Oats</p>
-              </div>
-            </div>
+    <div class="controls">
+        <!-- Noise Scale -->
+        <div class="control">
+            <label for="noiseScale">Noise Scale:</label>
+            <input type="number" id="noiseScale" value="0.02" step="0.01" />
         </div>
 
-        <script>
-            const heart = document.querySelector(".heart");
-        </script>
+        <!-- Red -->
+        <div class="control">
+            <label for="red">Red:</label>
+            <input type="number" id="red" value="187" min="0" max="255" />
+        </div>
 
-<!-- Load the external hotkeys script from the functions folder -->
-<script src="functions\hotkeys.js"></script>
+        <!-- Green -->
+        <div class="control">
+            <label for="green">Green:</label>
+            <input type="number" id="green" value="200" min="0" max="255" />
+        </div>
+
+        <!-- Blue -->
+        <div class="control">
+            <label for="blue">Blue:</label>
+            <input type="number" id="blue" value="242" min="0" max="255" />
+        </div>
+    </div>
+
+    <script>
+        let noiseScale = 0.02;
+        let redVal = 187;
+        let greenVal = 200;
+        let blueVal = 242;
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.position(0, 0);
+            canvas.style('z-index', '-1');
+            canvas.style('position', 'fixed');
+            noLoop();
+
+            // Set up event listeners for the inputs
+            document.getElementById('noiseScale').addEventListener('input', (e) => {
+                noiseScale = parseFloat(e.target.value);
+                redraw(); // Redraw the background when the noise scale is updated
+            });
+
+            document.getElementById('red').addEventListener('input', (e) => {
+                redVal = parseInt(e.target.value);
+                redraw(); // Redraw the background when the red value is updated
+            });
+
+            document.getElementById('green').addEventListener('input', (e) => {
+                greenVal = parseInt(e.target.value);
+                redraw(); // Redraw the background when the green value is updated
+            });
+
+            document.getElementById('blue').addEventListener('input', (e) => {
+                blueVal = parseInt(e.target.value);
+                redraw(); // Redraw the background when the blue value is updated
+            });
+        }
+
+        function draw() {
+            background(255); // White background to start with
+
+            // Loop through each pixel and generate noise
+            for (let x = 0; x < width; x++) {
+                for (let y = 0; y < height; y++) {
+                    let noiseVal = noise(x * noiseScale, y * noiseScale); // Perlin noise
+                    let col = color(
+                        redVal + noiseVal * 80,    // Red color value with noise
+                        greenVal + noiseVal * 80,  // Green color value with noise
+                        blueVal + noiseVal * 80    // Blue color value with noise
+                    );
+                    stroke(col);
+                    point(x, y);
+                }
+            }
+        }
+
+        // Make sure canvas resizes on window resize
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            redraw();
+        }
+    </script>
 
 </body>
 </html>
