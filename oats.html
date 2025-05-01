@@ -4,69 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oats Birthday Heart</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .heart {
-      position: relative;
-      width: 200px;
-      height: 180px;
-      cursor: pointer;
-    }
-
-    .heart:before,
-    .heart:after {
-      content: "";
-      position: absolute;
-      width: 100px;
-      height: 160px;
-      background: red;
-      border-radius: 100px 100px 0 0;
-      top: 0;
-      left: 50px;
-      transform: rotate(-45deg);
-      transform-origin: 0 100%;
-    }
-
-    .heart:after {
-      left: 0;
-      transform: rotate(45deg);
-      transform-origin: 100% 100%;
-    }
-
-    .heart.filled {
-      animation: beat 1s infinite;
-    }
-
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-  </style>
 </head>
-<body>
+<body style="margin:0; background:white; display:flex; justify-content:center; align-items:center; height:100vh; overflow:hidden;">
 
 <script>
-  // Create the heart element
+  // Create wrapper
   const heart = document.createElement('div');
-  heart.classList.add('heart');
+  heart.style.position = 'relative';
+  heart.style.width = '200px';
+  heart.style.height = '180px';
+  heart.style.cursor = 'pointer';
+  heart.style.transform = 'scale(1)';
+  heart.style.transition = 'transform 0.3s ease';
 
-  // Toggle animation on click
-  heart.addEventListener('click', () => {
-    heart.classList.toggle('filled');
-  });
+  // Create left half
+  const left = document.createElement('div');
+  left.style.position = 'absolute';
+  left.style.width = '100px';
+  left.style.height = '160px';
+  left.style.background = 'red';
+  left.style.borderRadius = '100px 100px 0 0';
+  left.style.top = '0';
+  left.style.left = '50px';
+  left.style.transform = 'rotate(-45deg)';
+  left.style.transformOrigin = '0 100%';
 
-  // Add to page
+  // Create right half
+  const right = document.createElement('div');
+  right.style.position = 'absolute';
+  right.style.width = '100px';
+  right.style.height = '160px';
+  right.style.background = 'red';
+  right.style.borderRadius = '100px 100px 0 0';
+  right.style.top = '0';
+  right.style.left = '0';
+  right.style.transform = 'rotate(45deg)';
+  right.style.transformOrigin = '100% 100%';
+
+  // Append halves
+  heart.appendChild(left);
+  heart.appendChild(right);
+
+  // Append to body
   document.body.appendChild(heart);
+
+  // Beat animation toggle
+  let beating = false;
+  let beatInterval = null;
+
+  heart.addEventListener('click', () => {
+    beating = !beating;
+
+    if (beating) {
+      let scale = 1;
+      let up = true;
+      beatInterval = setInterval(() => {
+        scale = up ? 1.1 : 1;
+        heart.style.transform = `scale(${scale})`;
+        up = !up;
+      }, 300);
+    } else {
+      clearInterval(beatInterval);
+      heart.style.transform = 'scale(1)';
+    }
+  });
 </script>
+<!-- Load the external hotkeys script from the functions folder -->
+<script src="\functions\hotkeys.js"></script>
 
 </body>
 </html>
