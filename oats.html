@@ -1,81 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Birthday Heart</title>    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oats Birthday Heart</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 180px;
+      cursor: pointer;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 160px;
+      background: red;
+      border-radius: 100px 100px 0 0;
+      top: 0;
+      left: 50px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    .heart.filled {
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
 </head>
-<body id="homepage">
-    <script>//this now takes in header
-        fetch('https://kylerandomnes.github.io/header/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('head').innerHTML += data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
+<body>
 
-    <script>
-        function toggleFill(heart, className) {  
-            if (!hasClass(heart, className)) {
-              addClass(heart, className);
-            } else {
-              removeClass(heart, className);
-            }
-          }
-          
-          function addClass(el, className) {
-            if (el.classList) {
-              el.classList.add(className);
-            } else {
-              el.className += ' ' + className;
-            }
-          }
-          
-          function removeClass(el, className) {
-            if (el.classList) {
-              el.classList.remove(className);
-            } else {
-              el.className = el.className.replace(
-                new RegExp('(^|\\b)' + className.split(' ').join('|') +
-                           '(\\b|$)', 'gi'), ' ');
-            }
-          }
-          
-          function hasClass(el, className) {
-            if (el.classList) {
-              return el.classList.contains(className);
-            } else {
-              return new RegExp('(^| )' + className +
-                         '( |$)', 'gi').test(el.className);
-            }
-          }
+<script>
+  // Create the heart element
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
 
-          function checkHeartStatus() {
-            const heart = document.querySelector('.heart');
-            
-            // Check if the heart is filled
-            if (hasClass(heart, 'filled')) {
-                console.log('The heart is filled!');
-                // Perform actions when the heart is filled
-                // Example: Change background color or trigger animation
-            }
-        }
-    </script>
-        <div id="wrapper">
-            <div class="heart" onclick="toggleFill(this, 'filled'); checkHeartStatus();">
-              <div class="heart-text unselectable">
-                Happy birthday<p>Oats</p>
-              </div>
-            </div>
-        </div>
+  // Toggle animation on click
+  heart.addEventListener('click', () => {
+    heart.classList.toggle('filled');
+  });
 
-        <script>
-            const heart = document.querySelector(".heart");
-        </script>
-
-<!-- Load the external hotkeys script from the functions folder -->
-<script src="functions\hotkeys.js"></script>
+  // Add to page
+  document.body.appendChild(heart);
+</script>
 
 </body>
 </html>
