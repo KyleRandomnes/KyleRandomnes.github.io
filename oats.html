@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <title>Hidden Birthday Heart</title>    
 </head>
 <body id="homepage">
@@ -14,7 +15,34 @@
             })
             .catch(error => console.error('Error loading header:', error));
     </script>
-
+    <script>
+      let noiseScale = 0.02;
+    
+      function setup() {
+        let canvas = createCanvas(windowWidth, windowHeight);
+        canvas.position(0, 0);
+        canvas.style('z-index', '-1'); // Push canvas behind everything
+        canvas.style('position', 'fixed'); // Stick to background
+        noLoop();
+      }
+    
+      function draw() {
+        for (let x = 0; x < width; x++) {
+          for (let y = 0; y < height; y++) {
+            let noiseVal = noise(x * noiseScale, y * noiseScale);
+            let col = color(noiseVal * 80 + 50, noiseVal * 80 + 50, noiseVal * 80 + 50); // grey-ish granite
+            stroke(col);
+            point(x, y);
+          }
+        }
+      }
+    
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+        redraw();
+      }
+    </script>
+    
     <script>
         function toggleFill(heart, className) {  
             if (!hasClass(heart, className)) {

@@ -22,24 +22,9 @@
  .filled:after {
    background: red !important;
  }
-#wrapper {
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-  background: #000;
-    opacity: 1.0;
-  transform: scale(2.0);
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-    background: 
-        linear-gradient(45deg, #00b3b3, #006666, #66cccc, #3399cc), /* Blue marble gradient */
-        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.6), transparent 70%), /* Random gold streak 1 */
-        radial-gradient(circle at 70% 60%, rgba(255, 223, 50, 0.6), transparent 80%); /* Random gold streak 2 */
-    background-blend-mode: screen; /* Makes the layers blend seamlessly */  animation: marbleEffect 8s ease infinite; /* Apply animation for the effect */
-
-}
-@keyframes marbleEffect {
+ #wrapper {
+  background: transparent !important;
+}@keyframes marbleEffect {
     0% {
         background-position: 0% 50%;
     }
