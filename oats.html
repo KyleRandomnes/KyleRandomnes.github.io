@@ -128,74 +128,75 @@
       
           for (let x = 0; x < width; x++) {
               for (let y = 0; y < height; y++) {
-// Add localized spiral distortions to a base noise field
-// (integrated into your granite pattern logic)
-
-let distortionZones = []; // Will hold info about each spiral distortion blob
-
-function generateDistortionZones(count = 5) {
-  distortionZones = [];
-  for (let i = 0; i < count; i++) {
-    distortionZones.push({
-      cx: random(width),
-      cy: random(height),
-      radius: random(100, 300),
-      swirlFactor: random(1.5, 4),
-      waveIntensity: random(10, 50),
-      type: random(['spiral', 'turbulent'])
-    });
-  }
-}
-
-function drawPixel(x, y, baseNoiseScale) {
-  let nx = x, ny = y;
-  let appliedDistortion = false;
-
-  for (let zone of distortionZones) {
-    let dx = x - zone.cx;
-    let dy = y - zone.cy;
-    let distFromCenter = sqrt(dx * dx + dy * dy);
-
-    if (distFromCenter < zone.radius) {
-      // Inside a distortion zone
-      appliedDistortion = true;
-
-      let angle = atan2(dy, dx);
-      let twistedAngle = angle + distFromCenter * zone.swirlFactor * 0.002;
-
-      let waveX = sin(y * 0.01) * zone.waveIntensity;
-      let waveY = cos(x * 0.01) * zone.waveIntensity;
-
-      let extraNoiseX = noise(x * 0.01, y * 0.01) * 100 - 50;
-      let extraNoiseY = noise(x * 0.02 + 999, y * 0.02 + 999) * 100 - 50;
-
-      nx = cos(twistedAngle) * distFromCenter + zone.cx + waveX + extraNoiseX;
-      ny = sin(twistedAngle) * distFromCenter + zone.cy + waveY + extraNoiseY;
-      break; // Only apply one distortion per pixel
-    }
-  }
-
-  let noiseVal = noise(nx * baseNoiseScale, ny * baseNoiseScale * 0.5);
-  noiseVal = map(noiseVal, 0, 1, -1, 1);
-
-  let streakBand = sin(atan2(y - height / 2, x - width / 2) * 10 + dist(x, y, width / 2, height / 2) * 0.1) * 0.1;
-  let adjustedNoiseVal = noiseVal + streakBand;
-
-  let col;
-  if (adjustedNoiseVal > 0.3) {
-    let red = map(noiseVal, 0.8, 1, r1Gold, r2Gold);
-    let green = map(noiseVal, 0.8, 1, g1Gold, g2Gold);
-    let blue = map(noiseVal, 0.8, 1, b1Gold, b2Gold);
-    col = color(red, green, blue);
-  } else {
-    let red = map(noiseVal, 0, 0.8, r1Base, r2Base);
-    let green = map(noiseVal, 0, 0.8, g1Base, g2Base);
-    let blue = map(noiseVal, 0, 0.8, b1Base, b2Base);
-    col = color(red, green, blue);
-  }
-  stroke(col);
-  point(x, y);
-}
+                // Add localized spiral distortions to a base noise field
+                // (integrated into your granite pattern logic)
+                
+                let distortionZones = []; // Will hold info about each spiral distortion blob
+                
+                function generateDistortionZones(count = 5) {
+                  distortionZones = [];
+                  for (let i = 0; i < count; i++) {
+                    distortionZones.push({
+                      cx: random(width),
+                      cy: random(height),
+                      radius: random(100, 300),
+                      swirlFactor: random(1.5, 4),
+                      waveIntensity: random(10, 50),
+                      type: random(['spiral', 'turbulent'])
+                    });
+                  }
+                }
+                
+                function drawPixel(x, y, baseNoiseScale) {
+                  let nx = x, ny = y;
+                  let appliedDistortion = false;
+                
+                  for (let zone of distortionZones) {
+                    let dx = x - zone.cx;
+                    let dy = y - zone.cy;
+                    let distFromCenter = sqrt(dx * dx + dy * dy);
+                
+                    if (distFromCenter < zone.radius) {
+                      // Inside a distortion zone
+                      appliedDistortion = true;
+                
+                      let angle = atan2(dy, dx);
+                      let twistedAngle = angle + distFromCenter * zone.swirlFactor * 0.002;
+                
+                      let waveX = sin(y * 0.01) * zone.waveIntensity;
+                      let waveY = cos(x * 0.01) * zone.waveIntensity;
+                
+                      let extraNoiseX = noise(x * 0.01, y * 0.01) * 100 - 50;
+                      let extraNoiseY = noise(x * 0.02 + 999, y * 0.02 + 999) * 100 - 50;
+                
+                      nx = cos(twistedAngle) * distFromCenter + zone.cx + waveX + extraNoiseX;
+                      ny = sin(twistedAngle) * distFromCenter + zone.cy + waveY + extraNoiseY;
+                      break; // Only apply one distortion per pixel
+                    }
+                  }
+                
+                  let noiseVal = noise(nx * baseNoiseScale, ny * baseNoiseScale * 0.5);
+                  noiseVal = map(noiseVal, 0, 1, -1, 1);
+                
+                  let streakBand = sin(atan2(y - height / 2, x - width / 2) * 10 + dist(x, y, width / 2, height / 2) * 0.1) * 0.1;
+                  let adjustedNoiseVal = noiseVal + streakBand;
+                
+                  let col;
+                  if (adjustedNoiseVal > 0.8) {
+                    let red = map(noiseVal, 0.8, 1, r1Gold, r2Gold);
+                    let green = map(noiseVal, 0.8, 1, g1Gold, g2Gold);
+                    let blue = map(noiseVal, 0.8, 1, b1Gold, b2Gold);
+                    col = color(red, green, blue);
+                  } else {
+                    let red = map(noiseVal, 0, 0.8, r1Base, r2Base);
+                    let green = map(noiseVal, 0, 0.8, g1Base, g2Base);
+                    let blue = map(noiseVal, 0, 0.8, b1Base, b2Base);
+                    col = color(red, green, blue);
+                  }
+                  stroke(col);
+                  point(x, y);
+                }
+                
 
               }
           }
