@@ -129,8 +129,22 @@
           for (let x = 0; x < width; x++) {
               for (let y = 0; y < height; y++) {
                   // Use a higher frequency of noise for smoother, extended lines
-                  let noiseVal = noise(x * noiseScale, y * noiseScale * 0.1);
-                        
+                  let cx = width / 2;
+                  let cy = height / 2;
+                  
+                  let dx = x - cx;
+                  let dy = y - cy;
+                  let angle = atan2(dy, dx);
+                  let radius = sqrt(dx * dx + dy * dy);
+                  
+                  let swirlFactor = 3.0; // Try 2.0–6.0 for different effects
+                  let twistedAngle = angle + radius * swirlFactor * 0.01;
+                  
+                  let sx = cos(twistedAngle) * radius;
+                  let sy = sin(twistedAngle) * radius;
+                  
+                  let noiseVal = noise(sx * noiseScale, sy * noiseScale * 0.1);
+                                          
                   // Smoother transitions and less "spotty" appearance
                   noiseVal = map(noiseVal, 0, 1, -1, 1); // Map noise to a wider range for smoother effects
       
