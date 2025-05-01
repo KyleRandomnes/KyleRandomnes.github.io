@@ -175,14 +175,14 @@ function drawPixel(x, y, baseNoiseScale) {
     }
   }
 
-  let noiseVal = noise(nx * baseNoiseScale, ny * baseNoiseScale * 0.1);
+  let noiseVal = noise(nx * baseNoiseScale, ny * baseNoiseScale * 0.8);
   noiseVal = map(noiseVal, 0, 1, -1, 1);
 
   let streakBand = sin(atan2(y - height / 2, x - width / 2) * 10 + dist(x, y, width / 2, height / 2) * 0.1) * 0.1;
   let adjustedNoiseVal = noiseVal + streakBand;
 
   let col;
-  if (noiseVal > 0.3) {
+  if (adjustedNoiseVal > 0.3) {
     let red = map(noiseVal, 0.8, 1, r1Gold, r2Gold);
     let green = map(noiseVal, 0.8, 1, g1Gold, g2Gold);
     let blue = map(noiseVal, 0.8, 1, b1Gold, b2Gold);
