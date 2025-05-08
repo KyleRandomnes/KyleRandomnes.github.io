@@ -113,15 +113,25 @@
       let r1Base = 163, r2Base = 187, g1Base = 189, g2Base = 200, b1Base = 226, b2Base = 242;
       let r1Gold = 209, r2Gold = 219, g1Gold = 192, g2Gold = 197, b1Gold = 162, b2Gold = 158;
       
-      function setup() {
-          let canvas = createCanvas(windowWidth, windowHeight);
-          canvas.position(0, 0);
-          canvas.style('z-index', '-1');
-          canvas.style('position', 'fixed');
-          noLoop();
-      
-          document.getElementById('applyChanges').addEventListener('click', applyChanges);
-      }
+      let swirlCenters = [];
+
+function setup() {
+    let canvas = createCanvas(windowWidth, windowHeight);
+    canvas.position(0, 0);
+    canvas.style('z-index', '-1');
+    canvas.style('position', 'fixed');
+    noLoop();
+    noiseDetail(4, 0.5);
+
+  for (let i = 0; i < 4; i++) {
+    swirlCenters.push({
+      x: random(width * 0.2, width * 0.8),
+      y: random(height * 0.2, height * 0.8),
+      swirlFactor: random(1.5, 3.0),
+    });
+    }
+    document.getElementById('applyChanges').addEventListener('click', applyChanges);
+}
       
       function draw() {
           background(255);
@@ -129,14 +139,25 @@
           for (let x = 0; x < width; x++) {
               for (let y = 0; y < height; y++) {
                   // Use a higher frequency of noise for smoother, extended lines
-                  let cx = width / 2;
-                  let cy = height / 2;
-                  
-                  let dx = x - cx;
-                  let dy = y - cy;
-                  let radius = sqrt(dx * dx + dy * dy);
-                  let angle = atan2(dy, dx);
-                  
+                  let totalAngle = 0;
+
+                for (let i = 0; i < swirlCenters.length; i++) {
+                    let center = swirlCenters[i];
+                    let dx = x - center.x;
+                    let dy = y - center.y;
+                    let radius = sqrt(dx * dx + dy * dy);
+                    let angle = atan2(dy, dx);
+                    totalAngle += angle + radius * center.swirlFactor * 0.002;
+                }
+
+                let avgAngle = totalAngle / swirlCenters.length;
+                let dxAvg = x - width / 2;
+                let dyAvg = y - height / 2;
+                let radiusAvg = sqrt(dxAvg * dxAvg + dyAvg * dyAvg);
+
+                let sx = cos(avgAngle) * radiusAvg;
+                let sy = sin(avgAngle) * radiusAvg;
+                /*
                   // Introduce mild wave distortions to create chaos
                   let swirlFactor = 2.5;
                   let waveX = sin(y * 0.02) * 20;
@@ -144,11 +165,10 @@
                   // Additional noise warping (chaos layer 2)
                   let nx = noise(x * 0.01, y * 0.01) * 100 - 50;
                   let ny = noise(x * 0.02 + 999, y * 0.02 + 999) * 100 - 50;
-
-                  let twistedAngle = angle + radius * swirlFactor * 0.002;
+*/
                   
-                  let sx = cos(twistedAngle) * radius + waveX + nx;
-                  let sy = sin(twistedAngle) * radius + waveY + ny;
+//                  let sx = cos(twistedAngle) * radius + waveX + nx;
+//                  let sy = sin(twistedAngle) * radius + waveY + ny;
                   
                   let noiseVal = octaveNoise(sx * noiseScale, sy * noiseScale * 0.5, 6, 0.5, 2.0);
                   // Smoother transitions and less "spotty" appearance
