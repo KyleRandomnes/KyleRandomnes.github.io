@@ -139,8 +139,8 @@
                   
                   // Introduce mild wave distortions to create chaos
                   let swirlFactor = 2.5;
-                  let waveX = sin(y * 0.01) * 40;
-                  let waveY = cos(x * 0.01) * 40;
+                  let waveX = sin(y * 0.02) * 20;
+                  let waveY = cos(x * 0.02) * 20;
                   // Additional noise warping (chaos layer 2)
                   let nx = noise(x * 0.01, y * 0.01) * 100 - 50;
                   let ny = noise(x * 0.02 + 999, y * 0.02 + 999) * 100 - 50;
@@ -150,10 +150,10 @@
                   let sx = cos(twistedAngle) * radius + waveX + nx;
                   let sy = sin(twistedAngle) * radius + waveY + ny;
                   
-                  let noiseVal = noise(sx * noiseScale, sy * noiseScale * 0.5);                                          
+                  let noiseVal = octaveNoise(sx * noiseScale, sy * noiseScale * 0.5, 6, 0.5, 2.0);
                   // Smoother transitions and less "spotty" appearance
                   noiseVal = map(noiseVal, 0, 1, -1, 1); // Map noise to a wider range for smoother effects
-                  let streakBand = sin(angle * 10 + radius * 0.1) * 0.1;
+                  let streakBand = sin(angle * 20 + radius * 0.2) * 0.15;
                   let adjustedNoiseVal = noiseVal + streakBand;
 
                   let col;
@@ -196,10 +196,29 @@
           redraw(); // Redraw with updated values
       }
       
+      function octaveNoise(x, y, octaves = 4, persistence = 0.5, lacunarity = 2.0) {
+        let total = 0;
+        let frequency = 1;
+        let amplitude = 1;
+        let maxValue = 0;
+    
+        for (let i = 0; i < octaves; i++) {
+            total += noise(x * frequency, y * frequency) * amplitude;
+            maxValue += amplitude;
+    
+            amplitude *= persistence;
+            frequency *= lacunarity;
+        }
+    
+        return total / maxValue; // Normalize to [0, 1]
+    }
+    
+
       function windowResized() {
           resizeCanvas(windowWidth, windowHeight);
           redraw();
       }
+      
     </script>
 
 </body>
