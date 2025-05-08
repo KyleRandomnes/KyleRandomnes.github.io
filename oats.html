@@ -173,15 +173,15 @@ function setup() {
                   let noiseVal = octaveNoise(sx * noiseScale, sy * noiseScale * 0.5, 6, 0.5, 2.0);
                   // Smoother transitions and less "spotty" appearance
                   noiseVal = map(noiseVal, 0, 1, -1, 1); // Map noise to a wider range for smoother effects
-                  let streakBand = sin(angle * 20 + radius * 0.2) * 0.15;
-                  let adjustedNoiseVal = noiseVal + streakBand;
+//                  let streakBand = sin(angle * 20 + radius * 0.2) * 0.15;
+//                  let adjustedNoiseVal = noiseVal + streakBand;
 
                   let col;
       
-                  if (adjustedNoiseVal > 0.1) { // Shocking streaks
-                      let red = map(adjustedNoiseVal, 0.8, 1, r1Gold, r2Gold);
-                      let green = map(adjustedNoiseVal, 0.8, 1, g1Gold, g2Gold);
-                      let blue = map(adjustedNoiseVal, 0.8, 1, b1Gold, b2Gold);
+                  if (noiseVal > 0.1) { // Shocking streaks
+                      let red = map(noiseVal, 0.8, 1, r1Gold, r2Gold);
+                      let green = map(noiseVal, 0.8, 1, g1Gold, g2Gold);
+                      let blue = map(noiseVal, 0.8, 1, b1Gold, b2Gold);
                       col = color(red, green, blue);
                   } else { // Base granite colors
                       let red = map(noiseVal, 0, 0.8, r1Base, r2Base);
