@@ -2,143 +2,161 @@
 <html>
 
 <head>
-<!-- JavaScript will load the header content here -->
-<link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
+    <!-- JavaScript will load the header content here -->
+    <link rel="icon" href="\images\generic\favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-<script>
-    fetch('https://kylerandomnes.github.io/header/header.html')
-    .then(response => response.text())
-        .then(data => {
-            document.querySelector('head').innerHTML += data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-</script>
+    <script>
+        fetch('https://kylerandomnes.github.io/header/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('head').innerHTML += data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
-<!-- Calling Function to render projectData -->
-<script src="/functions/projects.js"></script>
+    <!-- Calling Function to render projectData -->
+    <script src="/functions/projects.js"></script>
 
-<script>
-    const projects = [
-    {
-        title: "Bounce the ball",
-        description: `This is project was started by my friend he called me soon into his project 
-        where he was learning the matter.js Engine, which allowed for some good physics. He wanted to 
-        create an online game, however was unsure of how to do certain tasks. He called me so we could 
-        split the tasks into 2. If you click this it will take you to my collabrators github`,
-        video: "/images/selfStudy/BallBouncer/ballBounce.mp4",
-        nonClickable: false,
-        link: "https://github.com/BlakeJacobi"
-    },
-    {
-        subtitle: "Version 0.1",
-        description: `<p>This is what I recieved as the basic project, upon taking a look my partner 
-        had placed everything in one class, which worked very well for the smaller scale project. 
-        I realized this would not do for as the project grew and decided to make my first priority to 
-        divide the functions into multiple classes.</p> Jan 20 2025`,
-        images: ["/images/selfStudy/BallBouncer/FirstCodeStruct.png"],
-        nonClickable: true,
-    },
-    {
-        subtitle: "Version 0.2",
-        description: `<p>The start of this project was delayed. I knew what I needed to do, but I was 
-        preoccupied with creating other projects first. After making the changes from the previous version, 
-        I showed them to my teammate, they approved and found the codebase much easier to work with. This 
-        meant future iterations would be less complicated, and finding bugs would become a lot simpler too.</p>
+    <script>
+        const projects = [
+            {
+                title: "Bounce the ball",
+                description: `This project was started by my friend he called me soon into his project 
+                where he was learning the matter.js Engine, which allowed for some good physics. He wanted to 
+                create an online game, however was unsure of how to do certain tasks. He called me so we could 
+                split the tasks into 2. If you click this it will take you to my collaborator’s github`,
+                video: "/images/selfStudy/BallBouncer/ballBounce.mp4",
+                nonClickable: false,
+                link: "https://github.com/BlakeJacobi"
+            },
+            {
+                subtitle: "Version 0.1",
+                description: `<p>This is what I recieved as the basic project, upon taking a look my partner 
+                had placed everything in one class, which worked very well for the smaller scale project. 
+                I realized this would not do for as the project grew and decided to make my first priority to 
+                divide the functions into multiple classes.</p>
+                January 20 2025`,
+                images: ["/images/selfStudy/BallBouncer/FirstCodeStruct.png"],
+                nonClickable: true,
+            },
+            {
+                subtitle: "Version 0.2",
+                description: `<p>The start of this project was delayed. I knew what I needed to do, but I was 
+                preoccupied with creating other projects first. After making the changes from the previous version, 
+                I showed them to my teammate, they approved and found the codebase much easier to work with. This 
+                meant future iterations would be less complicated, and finding bugs would become a lot simpler too.</p>
 
-        <h2>Further Details:</h2>
+                <h2>Further Details:</h2>
 
-        <p><strong>First step:</strong><br>
-        I started by removing the controls from the main codebase and creating a new folder specifically 
-        for them. I split the controls into two movement classes and one input class. This setup meant that 
-        if we ever added new inputs, they would only need to go into one place, and changing how movement 
-        worked later would cause minimal issues.</p>
+                <p><strong>First step:</strong><br>
+                I started by removing the controls from the main codebase and creating a new folder specifically 
+                for them. I split the controls into two movement classes and one input class. This setup meant that 
+                if we ever added new inputs, they would only need to go into one place, and changing how movement 
+                worked later would cause minimal issues.</p>
 
-        <p><strong>Second step:</strong><br>
-        I removed obstacle spawning and movement from the main code and placed them into their own folder, 
-        splitting them into two separate classes. This did cause a bug: after resetting the game, obstacles 
-        would immediately spawn instead of waiting the proper amount of time. At the time, I decided to 
-        place this bug on a lower priority and focus first on finishing the code separation.</p>
+                <p><strong>Second step:</strong><br>
+                I removed obstacle spawning and movement from the main code and placed them into their own folder, 
+                splitting them into two separate classes. This did cause a bug: after resetting the game, obstacles 
+                would immediately spawn instead of waiting the proper amount of time. At the time, I decided to 
+                place this bug on a lower priority and focus first on finishing the code separation.</p>
 
-        <p><strong>Third step:</strong><br>
-        Finally, I removed the game manager from the main system and split it into three classes: 
-        <code>Score</code>, <code>Time</code>, and <code>GameOver</code>.<br>
-        - I tackled the <code>Score</code> class first, but quickly realized I had to refactor 
-        <code>Time</code> too, because many parts of the scoring system were dependent on it.<br>
-        - Once <code>Time</code> was properly separated, both <code>Score</code> and <code>Time</code> functioned correctly.<br>
-        - After that, I moved on to restructuring the game restart and game over logic.</p>
+                <p><strong>Third step:</strong><br>
+                Finally, I removed the game manager from the main system and split it into three classes: 
+                <code>Score</code>, <code>Time</code>, and <code>GameOver</code>.<br>
+                - I tackled the <code>Score</code> class first, but quickly realized I had to refactor 
+                <code>Time</code> too, because many parts of the scoring system were dependent on it.<br>
+                - Once <code>Time</code> was properly separated, both <code>Score</code> and <code>Time</code> functioned correctly.<br>
+                - After that, I moved on to restructuring the game restart and game over logic.</p>
 
-        <p>With all these parts working, the codebase became way easier to work with, and I noticeably 
-        reduced the reading complexity.</p>
+                <p>With all these parts working, the codebase became way easier to work with, and I noticeably 
+                reduced the reading complexity.</p>
 
-        <h2>Bug Revisit:</h2>
+                <h2>Bug Revisit:</h2>
 
-        <p>After the core restructure, I returned to the earlier obstacle spawning bug. 
-        The issue was that I hadn't properly reinitialized the obstacle array after a reset. I wasn’t removing the old obstacles. 
-        Because of that, the game was basically placing you back into a world 
-        where all the obstacles had simply moved positions.</p>
+                <p>After the core restructure, I returned to the earlier obstacle spawning bug. 
+                The issue was that I hadn't properly reinitialized the obstacle array after a reset. I wasn’t removing the old obstacles. 
+                Because of that, the game was basically placing you back into a world 
+                where all the obstacles had simply moved positions.</p>
 
-        <p>Fixing this not only solved the instant-spawn issue but also cleared up a second bug where 
-        obstacles would sometimes stop moving entirely after a reset.</p>
+                <p>Fixing this not only solved the instant-spawn issue but also cleared up a second bug where 
+                obstacles would sometimes stop moving entirely after a reset.</p>
 
-        <p>By the end of this version, the game <em>looked and played</em> the same for users, but under 
-        the hood, it was way cleaner, more maintainable, and better prepared for future updates. 
-        Even though players wouldn’t notice the changes, for development and bug-fixing, it made a huge 
-        difference.</p> March 27 2025`,
-        images: ["/images/selfStudy/BallBouncer/SecondCodeStruct.png"],
-        nonClickable: true,
-    },
-    {
-        subtitle: "Version 0.2.1",
-        description: `<p>It's been a while since I last updated this project, between job hunting and diving deeper into 
-        how multiplayer works, it's been a slow but steady process of improving both my skills and my 
-        code.</p>
+                <p>By the end of this version, the game <em>looked and played</em> the same for users, but under 
+                the hood, it was way cleaner, more maintainable, and better prepared for future updates. 
+                Even though players wouldn’t notice the changes, for development and bug-fixing, it made a huge 
+                difference.</p>
+                27 March 2025`,
+                images: ["/images/selfStudy/BallBouncer/SecondCodeStruct.png"],
+                nonClickable: true,
+            },
+            {
+                subtitle: "Version 0.2.1",
+                description: `<p>It's been a while since I last updated this project, between job hunting and diving deeper into 
+                how multiplayer works, it's been a slow but steady process of improving both my skills and my 
+                code.</p>
 
-        <p>This update was originally meant to introduce multiplayer. I managed to get two players on the 
-        field, but noticed that one wasn’t interacting properly, and the other was moving faster. 
-        After looking through the code again, I found the problem.</p>
+                <p>This update was originally meant to introduce multiplayer. I managed to get two players on the 
+                field, but noticed that one wasn’t interacting properly, and the other was moving faster. 
+                After looking through the code again, I found the problem.</p>
 
-        <p>I hadn’t implemented delta time. So I started refactoring again. It took longer than I expected, 
-        for a few different reasons. But between fixing that and continuing my research on multiplayer, 
-        I realized what my next step needs to be: a proper menu and lobby system.</p>
+                <p>I hadn’t implemented delta time. So I started refactoring again. It took longer than I expected, 
+                for a few different reasons. But between fixing that and continuing my research on multiplayer, 
+                I realized what my next step needs to be: a proper menu and lobby system.</p>
 
-        <p>I’ve also figured out what the *end goal* for this project is for me—and that’s given me real 
-        motivation to get back into it with full focus.</p>
-        23 June 2025`,
-        video: "/images/selfStudy/BallBouncer/ballBounceDelta.mp4",
-        nonClickable: true,
-    },
-];
-</script>
+                <p>I’ve also figured out what the *end goal* for this project is for me—and that’s given me real 
+                motivation to get back into it with full focus.</p>
+                23 June 2025`,
+                video: "/images/selfStudy/BallBouncer/ballBounceDelta.mp4",
+                nonClickable: true,
+            },
+            {
+                subtitle: "Version 0.2.2",
+                description: `<p>More refactoring, this time in preparation for adding multiple scenes. I built a 
+                scene manager, which led to setting up a standard three-function structure: <code>init</code>, 
+                <code>update</code>, and <code>delete</code>. I also left room for a potential renderer, 
+                though none of the current scenes use one yet.</p>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderProjects(projects);
-    });
-</script>
+                <p>Thankfully, I only had to refactor one class thanks to how clean the earlier code had become. 
+                That saved a lot of time.</p>
 
-<div class="scroll">
+                <p>Also added a super helpful tool that lets me export the game as a <code>.exe</code> file, so 
+                I can share test builds with people without needing them to go online.</p>
+                3 July 2025`,
+                video: "/images/selfStudy/BallBouncer/ThirdCodeStruct.mp4",
+                nonClickable: true,
+            },
+        ];
+    </script>
 
-<!-- Links to other sites -->
-<div id="navbar"></div>
-<script>
-    // Load the external navigation bar
-    fetch('/functions/navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderProjects(projects);
+        });
+    </script>
 
-            // Check if there’s a history to go back to AFTER loading the navbar
-            if (window.history.length > 1) {
-                // Show the Back button
-                document.getElementById('backButton').style.display = 'inline';
-            }
-        })
-        .catch(error => console.error('Error loading navigation bar:', error));
-</script>
-<!-- Load the external hotkeys script from the functions folder -->
-<script src="functions\hotkeys.js"></script>
+    <div class="scroll">
+
+        <!-- Links to other sites -->
+        <div id="navbar"></div>
+        <script>
+            // Load the external navigation bar
+            fetch('/functions/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // Check if there’s a history to go back to AFTER loading the navbar
+                    if (window.history.length > 1) {
+                        // Show the Back button
+                        document.getElementById('backButton').style.display = 'inline';
+                    }
+                })
+                .catch(error => console.error('Error loading navigation bar:', error));
+        </script>
+        <!-- Load the external hotkeys script from the functions folder -->
+        <script src="functions\hotkeys.js"></script>
 
 </body>
 
