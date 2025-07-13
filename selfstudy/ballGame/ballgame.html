@@ -37,7 +37,7 @@
                 had placed everything in one class, which worked very well for the smaller scale project. 
                 I realized this would not do for as the project grew and decided to make my first priority to 
                 divide the functions into multiple classes.</p>
-                January 20 2025`,
+                <date>January 20 2025</date>`,
                 images: ["/images/selfStudy/BallBouncer/FirstCodeStruct.png"],
                 nonClickable: true,
             },
@@ -87,7 +87,7 @@
                 the hood, it was way cleaner, more maintainable, and better prepared for future updates. 
                 Even though players wouldn’t notice the changes, for development and bug-fixing, it made a huge 
                 difference.</p>
-                27 March 2025`,
+                <date>27 March 2025</date>`,
                 images: ["/images/selfStudy/BallBouncer/SecondCodeStruct.png"],
                 nonClickable: true,
             },
@@ -107,7 +107,7 @@
 
                 <p>I’ve also figured out what the *end goal* for this project is for me—and that’s given me real 
                 motivation to get back into it with full focus.</p>
-                23 June 2025`,
+                <date>23 June 2025</date>`,
                 video: "/images/selfStudy/BallBouncer/ballBounceDelta.mp4",
                 nonClickable: true,
             },
@@ -123,7 +123,7 @@
 
                 <p>Also added a super helpful tool that lets me export the game as a <code>.exe</code> file, so 
                 I can share test builds with people without needing them to go online.</p>
-                3 July 2025`,
+                <date>3 July 2025</date>`,
                 images: ["/images/selfStudy/BallBouncer/ThirdCodeStruct.png"],
                 nonClickable: true,
             },
@@ -134,8 +134,30 @@
 
                 <p>The UI looks pretty blank right now, but honestly, trying to make it beautiful at this stage 
                 feels like waxing a wooden deck while it’s still being built. Priorities.</p>
-                4 July 2025`,
+                <date>4 July 2025</date>`,
                 images: ["/images/selfStudy/BallBouncer/menu.png"],
+                nonClickable: true,
+            },
+            {
+                subtitle: "Version 0.4",
+                description: `<p>After having to take a short holiday, I got to work with multiplayer. 
+                This was going to start by having me work on the most basic part of multiplayer — the 
+                lobby scene. As I began working on it, I realized how the socket system works 
+                *almost exactly* like signals in <code>GODOT</code>. I’ve got some experience with signals 
+                and could very easily get the system working from there.</p>
+
+                <p>Even with the logic now clicked into place, it took a bit to learn the syntax between 
+                when to use <code>io.emit</code>, <code>socket.emit</code>, or 
+                <code>socket.broadcast.emit</code>. These are things I’m still learning, but with time and 
+                effort it’ll come. I’ve been finding that some trial and error helps a lot in this regard.</p>
+
+                <p>Some major challenges I had were refactoring <code>GameManager</code>, and moving 
+                <code>main.js</code>, <code>index.html</code>, and <code>style.css</code> to the 
+                <code>/public</code> folder. I also learned how to make the version/patch number that 
+                each of these notes use actually reflect on GitHub itself. That’s been huge for me — I 
+                now have real versioning on GitHub outside of just looking at commits.</p>
+                <date>12 July 2025</date>`,
+                video: "/images/selfStudy/BallBouncer/ballGameLobby.mp4",
                 nonClickable: true,
             },
         ];
