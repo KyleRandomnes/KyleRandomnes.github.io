@@ -157,7 +157,38 @@
                 each of these notes use actually reflect on GitHub itself. That’s been huge for me — I 
                 now have real versioning on GitHub outside of just looking at commits.</p>
                 <date>12 July 2025</date>`,
-                video: "/images/selfStudy/BallBouncer/ballGameLobby.mp4",
+                video: "/images/selfStudy/BallBouncer/ballBounceLobby.mp4",
+                nonClickable: true,
+            },
+            {
+                subtitle: "Version 0.4.1",
+                description: `<p>There was a short 4-day break between this and the last update because I 
+                went on holiday. I did get some coding done while away, but my laptop’s keyboard broke, 
+                so I’ve been typing using the on-screen keyboard. It’s been… slow, to say the least.</p>
+
+                <p>I started by updating the <code>Lobby</code> scene. When the host presses "Start", all 
+                players in the queue are now transitioned into the <code>Game</code> scene. Anyone who 
+                was just sitting in the lobby but not in the queue gets sent back to the 
+                <code>Main Menu</code>. This is just a placeholder until I have proper room logic in 
+                place.</p>
+
+                <p>Next step: I needed to generate the second player’s ball, it shows up as a blue ball on 
+                screen. This is where things broke. The second player wasn’t moving at all, and if the 
+                players had different window heights, their starting positions didn’t line up and their 
+                obstacle spawns were completely out of sync.</p>
+
+                <p>I started debugging the movement issue. After a couple hours of testing, I found it, the 
+                problem was that I was passing <code>socket.id</code> in two different formats, one of them 
+                inside a <code>{}</code> object. It took me way too long to find for how simple it was.</p>
+
+                <p>After fixing that, I noticed another issue: the queue wasn’t being cleared when switching 
+                scenes. That meant I had to reset the server every time I finished a game, or else everything 
+                got stuck. I fixed that too.</p>
+
+                <p>With both bugs resolved, the multiplayer scene transitions and player setup are working 
+                more reliably now.</p>
+                <date>20 July 2025</date>`,
+                video: "/images/selfStudy/BallBouncer/ballGameMulti.mp4",
                 nonClickable: true,
             },
         ];
